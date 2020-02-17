@@ -1,67 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
     <line>
       <![CDATA[Mouse Hovering to Account link]]>
     </line>
-    <line>
-      <![CDATA[Clicking on SingIn Link]]>
-    </line>
-    <line>
-      <![CDATA[Entering the Username]]>
-    </line>
-    <line>
-      <![CDATA[Entering the Password]]>
-    </line>
-    <line>
-      <![CDATA[Clicking on the login Button]]>
-    </line>
-    <line>
-      <![CDATA[Taking ScreenShot of MyAccountPageSS]]>
-    </line>
-    <line>
-      <![CDATA[Retriving the Welcome Name]]>
-    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="35567" started-at="2020-01-23T22:20:45 IST" finished-at="2020-01-23T22:21:21 IST">
+  <suite name="Default suite" duration-ms="65734" started-at="2020-01-27T14:22:20 IST" finished-at="2020-01-27T14:23:26 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="35567" started-at="2020-01-23T22:20:45 IST" finished-at="2020-01-23T22:21:21 IST">
+    <test name="Default test" duration-ms="65734" started-at="2020-01-27T14:22:20 IST" finished-at="2020-01-27T14:23:26 IST">
       <class name="com.tyss.project.scripts.LoginPage">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="setUp" is-config="true" duration-ms="13218" started-at="2020-01-23T22:20:45 IST" finished-at="2020-01-23T22:20:58 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="setUp" is-config="true" duration-ms="35792" started-at="2020-01-27T14:22:21 IST" finished-at="2020-01-27T14:22:56 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tc_01()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tc_01" duration-ms="19175" started-at="2020-01-23T22:20:58 IST" finished-at="2020-01-23T22:21:18 IST">
+        <test-method status="FAIL" signature="tc_01()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tc_01" duration-ms="22876" started-at="2020-01-27T14:22:56 IST" finished-at="2020-01-27T14:23:19 IST">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (2f47a90b-e3e7-4287-9d4c-a370ae6d4b23)] -> xpath: //a[contains(.,' Sign in')]] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WARLOCKOPAIN25L', ip: '192.168.18.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 72.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200117190643, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 9496, moz:profile: C:\Users\warlo\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2f47a90b-e3e7-4287-9d4c-a370ae6d4b23]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (2f47a90b-e3e7-4287-9d4c-a370ae6d4b23)] -> xpath: //a[contains(.,' Sign in')]] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WARLOCKOPAIN25L', ip: '192.168.18.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 72.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200117190643, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 9496, moz:profile: C:\Users\warlo\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 2f47a90b-e3e7-4287-9d4c-a370ae6d4b23
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.tyss.project.pages.HomePage.signInClk(HomePage.java:33)
+at com.tyss.project.scripts.LoginPage.tc_01(LoginPage.java:19)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
             <line>
               <![CDATA[Mouse Hovering to Account link]]>
             </line>
-            <line>
-              <![CDATA[Clicking on SingIn Link]]>
-            </line>
-            <line>
-              <![CDATA[Entering the Username]]>
-            </line>
-            <line>
-              <![CDATA[Entering the Password]]>
-            </line>
-            <line>
-              <![CDATA[Clicking on the login Button]]>
-            </line>
-            <line>
-              <![CDATA[Taking ScreenShot of MyAccountPageSS]]>
-            </line>
-            <line>
-              <![CDATA[Retriving the Welcome Name]]>
-            </line>
           </reporter-output>
         </test-method> <!-- tc_01 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tearDown" is-config="true" duration-ms="3098" started-at="2020-01-23T22:21:18 IST" finished-at="2020-01-23T22:21:21 IST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tearDown" is-config="true" duration-ms="6875" started-at="2020-01-27T14:23:19 IST" finished-at="2020-01-27T14:23:26 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.tyss.project.scripts.LoginPage -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

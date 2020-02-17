@@ -20,6 +20,7 @@ public class BaseLib {
 	public void setUp()
 	{
 		String browser = GenericLib.getPropData("BrowserName");
+		
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 		ChromeOptions options = new ChromeOptions();
@@ -32,9 +33,11 @@ public class BaseLib {
 			options.addPreference("dom.webnotifications.enabled", false);	
 			driver = new FirefoxDriver(options);
 		}
+		
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    driver.manage().window().maximize();
 		driver.get(GenericLib.getPropData("url"));
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
 	}
 	
 	@AfterMethod
