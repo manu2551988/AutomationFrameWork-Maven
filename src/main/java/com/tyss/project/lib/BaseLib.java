@@ -12,11 +12,12 @@ import org.testng.annotations.BeforeMethod;
 
 
 public class BaseLib {
+	
 	static
 	{
 		System.setProperty(GenericLib.getPropData("BrowserKey"), GenericLib.getPropData("BrowserPath"));
 	}
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	@BeforeMethod
 	public void setUp()

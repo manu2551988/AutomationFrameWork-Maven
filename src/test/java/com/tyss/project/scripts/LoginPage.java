@@ -20,8 +20,8 @@ public class LoginPage extends BaseLib {
 		Thread.sleep(3000);
 		CustomerLoginPage clp = new CustomerLoginPage(driver);
 		Assert.assertEquals(clp.customerLoginPageTitle(), GenericLib.getExpected("Sheet1",5,4));
-		clp.untxtboxEnterData(GenericLib.getExecelData("Sheet1", 6, 3));
-		clp.pwtxtboxEnterData(GenericLib.getExecelData("Sheet1", 7, 3));
+		clp.untxtboxEnterData(GenericLib.getExcelData("Sheet1", 6, 3));
+		clp.pwtxtboxEnterData(GenericLib.getExcelData("Sheet1", 7, 3));
 		clp.loginBtnClick();
 		MyAccountPage ma = new MyAccountPage(driver);
 		Assert.assertEquals(ma.MyAccountPageTitle(), GenericLib.getExpected("Sheet1", 8, 4));
