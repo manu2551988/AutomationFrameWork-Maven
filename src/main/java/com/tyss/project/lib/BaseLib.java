@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
@@ -35,6 +37,11 @@ public class BaseLib {
 			FirefoxOptions options = new FirefoxOptions();
 			options.addPreference("dom.webnotifications.enabled", false);	
 			driver = new FirefoxDriver(options);
+		}
+		if (browser.equalsIgnoreCase("edge")) 
+		{
+			EdgeOptions options=new EdgeOptions();
+			driver=new EdgeDriver(options);			
 		}
 		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

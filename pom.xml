@@ -18,8 +18,22 @@
 	</plugin>
 	</plugins>
 	</build>
-	<dependencies>
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+	
+<dependencies> 
+<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>7.3.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-server</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
@@ -28,16 +42,65 @@
     <scope>test</scope>
 </dependency>
 
-
-
-
-
-	
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-server</artifactId>
-    <version>3.141.59</version>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.3.1</version>
+    <scope>test</scope>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>4.3.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>xml-path</artifactId>
+    <version>4.3.1</version>
+</dependency>
+
+<!-- to validate that a JSON response conforms to a Json Schema -->
+	<dependency>
+		<groupId>io.rest-assured</groupId>
+		<artifactId>json-schema-validator</artifactId>
+		<version>3.0.2</version>
+	</dependency>
+	
+<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.12</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpmime</artifactId>
+    <version>4.5.12</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-library</artifactId>
+    <version>2.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-core</artifactId>
+    <version>2.2</version>
+    <scope>test</scope>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
@@ -45,18 +108,19 @@
     <version>2.6</version>
 </dependency>
 
-
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
     <version>3.15</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
     <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml</artifactId>
-    <version>3.15</version>
+    <artifactId>poi</artifactId>
+    <version>4.1.2</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
@@ -64,7 +128,8 @@
     <groupId>org.sikuli</groupId>
     <artifactId>sikuli-api</artifactId>
     <version>1.2.0</version>
-</dependency>
+</dependency>  
 
-	</dependencies>
+</dependencies>
+  
 </project>

@@ -3,6 +3,9 @@ package com.tyss.project.lib;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -15,8 +18,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
-//import org.apache.poi.ss.usermodel.WorkbookFactory;
 import com.tyss.project.init.IConstants;
+
+
 
 public class GenericLib {
 	
@@ -35,6 +39,32 @@ public class GenericLib {
 		String data=null;
 		try {
 			FileInputStream fin=new FileInputStream(IConstants.EfilePath);
+			workbook=WorkbookFactory.create(fin);
+			Sheet sht=workbook.getSheet(sheet);
+			Cell cl=sht.getRow(row).getCell(col);
+			data=cl.getStringCellValue();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return data;
+		
+	}
+	
+	/*
+	 * 
+	 * @Author:Manu Kakkar
+	 * 
+	 * Description:To read data from ExcelSheet with path input
+	 * 
+	 */
+		
+	public static String getExcelDataByPath(String path,String sheet,int row,int col) 
+	{
+		String data=null;
+		try {
+			FileInputStream fin=new FileInputStream(path);
 			workbook=WorkbookFactory.create(fin);
 			Sheet sht=workbook.getSheet(sheet);
 			Cell cl=sht.getRow(row).getCell(col);
@@ -94,7 +124,7 @@ public class GenericLib {
 	/*
 	 * @Author:Manu Kakkar
 	 * 
-	 * Description:To read data from the Excel file of any kind by converting it Strong 
+	 * Description:To read data from the Excel file of any kind by converting it String 
 	 * 
 	 */
 	
@@ -159,5 +189,17 @@ public class GenericLib {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	/*
+	 * @Author:Manu Kakkar
+	 * 
+	 * Description: To read data in the XML file
+	 * 
+	 */
+	
+	public static String readXML(String path) throws IOException
+	{
+		return new String(Files.readAllBytes(Paths.get(path)));
 	}
 }
