@@ -68,7 +68,7 @@ public abstract class BaseLib implements IAutoConstant {
 			passCount++;
 		} else {
 			failCount++;
-			String Photo_Path = screenShotPath + methodName + ".png";
+			String Photo_Path = resultscreenShotPath + methodName + ".png";
 			GenericLib.takeScreenShotResult(driver, Photo_Path);
 		}
 

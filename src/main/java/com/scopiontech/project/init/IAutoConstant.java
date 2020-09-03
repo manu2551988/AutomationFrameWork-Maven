@@ -27,6 +27,8 @@ public interface IAutoConstant {
 	String EfilePath = DirPath + "/src/test/resources/excel/TestCases_Actitime.xlsx";
 
 	String screenShotPath = DirPath + "/ScreenShots/";
+	
+	String resultscreenShotPath = DirPath + "/Results/";
 
 	String URL = "http://localhost/login.do";
 
