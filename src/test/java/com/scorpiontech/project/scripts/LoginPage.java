@@ -3,13 +3,13 @@ package com.scorpiontech.project.scripts;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseLib;
+import com.scorpiontech.project.lib.BaseTest;
 import com.scorpiontech.project.lib.GenericLib;
 import com.scorpiontech.project.pages.CustomerLoginPage;
 import com.scorpiontech.project.pages.HomePage;
 import com.scorpiontech.project.pages.MyAccountPage;
 
-public class LoginPage extends BaseLib {
+public class LoginPage extends BaseTest {
 
 	@Test
 	public void tc_01() throws InterruptedException {

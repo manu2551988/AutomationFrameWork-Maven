@@ -18,7 +18,7 @@ import org.testng.annotations.BeforeMethod;
 
 import com.scorpiontech.project.init.IAutoConstant;
 
-public abstract class BaseLib implements IAutoConstant {
+public abstract class BaseTest implements IAutoConstant {
 
 	static {
 		System.setProperty(CHROME_KEY, CHROME_VALUE);

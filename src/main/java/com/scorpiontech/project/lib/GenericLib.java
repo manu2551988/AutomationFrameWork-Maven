@@ -25,14 +25,15 @@ public class GenericLib {
 	public static Workbook workbook;
 
 	/**
-	 * Author: Manu Kakkar Description: To read the Data from Excel Sheet
-	 * 
+	 * Author: Manu Kakkar 
+	 * Description: To read the Data from Excel Sheet
 	 * @param sheet
 	 * @param row
 	 * @param col
 	 * @return
 	 * 
 	 */
+	
 	public static String getExcelData(String sheet, int row, int col) {
 		String data = null;
 		try {
@@ -50,9 +51,9 @@ public class GenericLib {
 	}
 
 	/**
-	 * Author: Manu Kakkar Description: To read the Data from Excel Sheet from a
+	 * Author: Manu Kakkar 
+	 * Description: To read the Data from Excel Sheet from a
 	 * specific path of file
-	 * 
 	 * @param path
 	 * @param sheet
 	 * @param row
@@ -78,7 +79,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description: To write the Data in Excel Sheet
+	 * @Author:Manu Kakkar 
+	 * Description: To write the Data in Excel Sheet
 	 * @param path
 	 * @param sheetName
 	 * @param rowNo
@@ -101,8 +103,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description:To read expected result from the Excel file
-	 *              by splitting the input
+	 *@Author:Manu Kakkar 
+	 * Description:To read the Expected Result in LHS from Excel Sheet by splitting the output
 	 * @param sheet
 	 * @param row
 	 * @param col
@@ -116,6 +118,14 @@ public class GenericLib {
 		return eData[0];
 	}
 
+	/**
+	 * @Author:Manu Kakkar 
+	 * Description:To read the Expected Result in RHS from Excel Sheet by splitting the output
+	 * @param sheet
+	 * @param row
+	 * @param col
+	 * @return
+	 */
 	public static String getExpectedIndex1(String sheet, int row, int col) {
 		String data = getExcelData(sheet, row, col);
 		String[] eData = data.split("-");
@@ -123,14 +133,14 @@ public class GenericLib {
 	}
 
 	/**
-	 * Author: Manu Kakkar Description: To read the total number of Rows in Excel
-	 * Sheet
-	 * 
+	 * Author: Manu Kakkar 
+	 * Description: To read the total number of Rows in Excel Sheet
 	 * @param path
 	 * @param sheet
 	 * @return
 	 * 
 	 */
+	
 	public static int read_XL_RowCount(String path, String sheet) {
 		int data = 0;
 		try {
@@ -143,8 +153,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description:To read Data from the Excel file of any kind
-	 *              by converting it String
+	 * @Author:Manu Kakkar 
+	 * Description:To read Data from the Excel file of any kind by converting it String
 	 * @param sheet
 	 * @param row
 	 * @param col
@@ -168,7 +178,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description:To read the Data from Property File
+	 * @Author:Manu Kakkar 
+	 * Description:To read the Data from Property File
 	 * @param key
 	 * @return
 	 * 
@@ -190,7 +201,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description:To take the ScreenShot of browser
+	 * @Author:Manu Kakkar 
+	 * Description:To take the ScreenShot of browser
 	 * @param driver
 	 * @param name
 	 * 
@@ -211,8 +223,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description:To take the ScreenShot of browser by failed
-	 *              test cases
+	 * @Author:Manu Kakkar 
+	 * Description:To take the ScreenShot of browser by failedtest cases
 	 * @param driver
 	 * @param path
 	 * 
@@ -233,7 +245,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar Description: To read data in the XML file
+	 * @Author:Manu Kakkar 
+	 * Description: To read data in the XML file
 	 * @param path
 	 * @return
 	 * @throws IOException
