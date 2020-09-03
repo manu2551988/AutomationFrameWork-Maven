@@ -18,7 +18,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
-import com.scopiontech.project.init.IAutoConstant;
+import com.scorpiontech.project.init.IAutoConstant;
 
 public class GenericLib {
 

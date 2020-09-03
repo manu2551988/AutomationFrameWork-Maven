@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import com.scopiontech.project.init.IAutoConstant;
+import com.scorpiontech.project.init.IAutoConstant;
 
 abstract public class BrowserSimple implements IAutoConstant {
 
