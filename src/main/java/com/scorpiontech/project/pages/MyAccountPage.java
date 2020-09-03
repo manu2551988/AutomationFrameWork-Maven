@@ -1,4 +1,4 @@
-package com.tyss.project.pages;
+package com.scorpiontech.project.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,22 +14,19 @@ public class MyAccountPage {
 	private WebElement helloName;
 
 	public MyAccountPage(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	public String helloNameTxt()
-	{
+
+	public String helloNameTxt() {
 		Reporter.log("Retriving the Welcome Name");
 		return helloName.getText();
 	}
-	
-	public String MyAccountPageTitle()
-	{
+
+	public String MyAccountPageTitle() {
 		WebDriverWait wait = new WebDriverWait(driver, 15);
 		wait.until(ExpectedConditions.titleContains("My Account"));
 		return driver.getTitle();
 	}
-	
 
 }

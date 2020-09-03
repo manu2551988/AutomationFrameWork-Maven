@@ -1,4 +1,4 @@
-package com.tyss.project.pages;
+package com.scorpiontech.project.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,21 +11,19 @@ import org.testng.Reporter;
 
 public class HomePage {
 	WebDriver driver;
-	
-	@FindBy(xpath="//abbr[.='Account']")
+
+	@FindBy(xpath = "//abbr[.='Account']")
 	private WebElement accountLink;
-	
+
 	@FindBy(xpath = "//a[contains(.,' Sign in')]")
 	private WebElement signIn;
-	
-	public HomePage(WebDriver driver)
-	{
-		this.driver=driver;
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void signInClk()
-	{
+	public void signInClk() {
 		Reporter.log("Mouse Hovering to Account link");
 		Actions act = new Actions(driver);
 		act.moveToElement(accountLink).perform();
@@ -34,9 +32,8 @@ public class HomePage {
 		Reporter.log("Clicking on SingIn Link");
 		signIn.click();
 	}
-	
-	public String homePageTitle()
-	{
+
+	public String homePageTitle() {
 		return driver.getTitle();
 	}
 }
