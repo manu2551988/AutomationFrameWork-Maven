@@ -16,6 +16,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import com.scorpiontech.project.init.IAutoConstant;
@@ -89,7 +91,7 @@ public class GenericLib {
 	 * 
 	 */
 
-	public static void createCell(String path, String sheetName, int rowNo, int cellNo, String data) {
+	public static void createCell(String path, String sheetName, int rowNo, int cellNo, int data) {
 		try {
 			workbook = WorkbookFactory.create(new FileInputStream(path));
 			Cell c = workbook.getSheet(sheetName).getRow(rowNo).createCell(cellNo);
@@ -151,6 +153,8 @@ public class GenericLib {
 		}
 		return data;
 	}
+	
+	
 
 	/**
 	 * @Author:Manu Kakkar 
@@ -255,5 +259,23 @@ public class GenericLib {
 
 	public static String readXML(String path) throws IOException {
 		return new String(Files.readAllBytes(Paths.get(path)));
+	}
+	
+	/**
+	 * @Author: Manu Kakkar
+	 * Description: Method to verify the page titles
+	 * @param driver
+	 * @param expectedPT
+	 */
+	public static void chkPageTitle(WebDriver driver, String expectedPT) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains(expectedPT));
+
+		String actualPT = driver.getTitle();
+		if (actualPT.equals(expectedPT)) {
+			System.out.println("Expected Page is Displayed-->" + expectedPT);
+		} else {
+			System.out.println("Expected Page is NOT Displayed-->" + actualPT);
+		}
 	}
 }

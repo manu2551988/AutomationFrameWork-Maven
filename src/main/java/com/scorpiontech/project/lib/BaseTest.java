@@ -11,8 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
@@ -60,23 +60,31 @@ public abstract class BaseTest implements IAutoConstant {
 	}
 
 	@AfterMethod
-	public void logoutApplication(ITestResult res) {
+	public void tearDown(ITestResult res) {
 
 		int status = res.getStatus();
 		String methodName = res.getName();
 		if (status == 1) {
 			passCount++;
+			String Photo_Path=passScreenShotPath+ methodName +".png";
+			GenericLib.takeScreenShotResult(driver, Photo_Path);
 		} else {
 			failCount++;
-			String Photo_Path = resultscreenShotPath + methodName + ".png";
+			String Photo_Path = failScreenShotPath + methodName + ".png";
 			GenericLib.takeScreenShotResult(driver, Photo_Path);
 		}
-
-	}
-
-	@AfterClass
-	public void tearDown() {
 		driver.close();
+
 	}
+	
+	@AfterSuite
+	public void printReport() {
+		Reporter.log("Passcount:"+passCount,true);
+		Reporter.log("Failcount:"+failCount,true);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
+	}
+
+	
 
 }

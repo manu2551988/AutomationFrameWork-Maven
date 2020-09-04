@@ -1,82 +1,275 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="1" total="3" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[Mouse Hovering to Account link]]>
+      <![CDATA[Taking the Screenhot]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+    </line>
+    <line>
+      <![CDATA[Taking the Screenhot]]>
+    </line>
+    <line>
+      <![CDATA[Passcount:1]]>
+    </line>
+    <line>
+      <![CDATA[Failcount:1]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="65734" started-at="2020-01-27T14:22:20 IST" finished-at="2020-01-27T14:23:26 IST">
+  <suite name="Suite" duration-ms="53189" started-at="2020-09-04T16:36:17 IST" finished-at="2020-09-04T16:37:10 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="65734" started-at="2020-01-27T14:22:20 IST" finished-at="2020-01-27T14:23:26 IST">
-      <class name="com.tyss.project.scripts.LoginPage">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="setUp" is-config="true" duration-ms="35792" started-at="2020-01-27T14:22:21 IST" finished-at="2020-01-27T14:22:56 IST">
+    <test name="Test" duration-ms="53189" started-at="2020-09-04T16:36:17 IST" finished-at="2020-09-04T16:37:10 IST">
+      <class name="com.scorpiontech.project.scripts.TestInvalidLoginpage">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.scorpiontech.project.scripts.TestInvalidLoginpage@6a1aab78]" name="setUp" is-config="true" duration-ms="5794" started-at="2020-09-04T16:36:43 IST" finished-at="2020-09-04T16:36:49 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="tc_01()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tc_01" duration-ms="22876" started-at="2020-01-27T14:22:56 IST" finished-at="2020-01-27T14:23:19 IST">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method status="PASS" signature="openApplication()[pri:0, instance:com.scorpiontech.project.scripts.TestInvalidLoginpage@6a1aab78]" name="openApplication" is-config="true" duration-ms="1068" started-at="2020-09-04T16:36:49 IST" finished-at="2020-09-04T16:36:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApplication -->
+        <test-method status="PASS" signature="test_InvalidLogin()[pri:0, instance:com.scorpiontech.project.scripts.TestInvalidLoginpage@6a1aab78]" name="test_InvalidLogin" duration-ms="19360" started-at="2020-09-04T16:36:50 IST" finished-at="2020-09-04T16:37:10 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+            <line>
+              <![CDATA[Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test_InvalidLogin -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.scorpiontech.project.scripts.TestInvalidLoginpage@6a1aab78]" name="tearDown" is-config="true" duration-ms="628" started-at="2020-09-04T16:37:10 IST" finished-at="2020-09-04T16:37:10 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test_InvalidLogin status=SUCCESS method=TestInvalidLoginpage.test_InvalidLogin()[pri:0, instance:com.scorpiontech.project.scripts.TestInvalidLoginpage@6a1aab78] output=Error Msg Is DisplayedUsername or Password is invalid. Please try again.]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Taking the Screenhot]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.scorpiontech.project.scripts.TestInvalidLoginpage -->
+      <class name="com.scorpiontech.project.scripts.TestValidLoginPage">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f]" name="setUp" is-config="true" duration-ms="7186" started-at="2020-09-04T16:36:17 IST" finished-at="2020-09-04T16:36:24 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="openApplication()[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f]" name="openApplication" is-config="true" duration-ms="912" started-at="2020-09-04T16:36:24 IST" finished-at="2020-09-04T16:36:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApplication -->
+        <test-method status="FAIL" signature="validlogin_Test()[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f]" name="validlogin_Test" duration-ms="13358" started-at="2020-09-04T16:36:25 IST" finished-at="2020-09-04T16:36:39 IST">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (2f47a90b-e3e7-4287-9d4c-a370ae6d4b23)] -> xpath: //a[contains(.,' Sign in')]] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'WARLOCKOPAIN25L', ip: '192.168.18.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 72.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200117190643, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 9496, moz:profile: C:\Users\warlo\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f47a90b-e3e7-4287-9d4c-a370ae6d4b23]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'invalid.')]"}
+  (Session info: chrome=85.0.4183.83)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'WARLOCKOPAIN25L', ip: '192.168.204.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.83 (94abc2237ae0c..., userDataDir: C:\Users\warlo\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57315}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: df985cbda04c21f696d1d695d55cd291
+*** Element info: {Using=xpath, value=//span[contains(text(),'invalid.')]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (2f47a90b-e3e7-4287-9d4c-a370ae6d4b23)] -> xpath: //a[contains(.,' Sign in')]] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'WARLOCKOPAIN25L', ip: '192.168.18.9', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 72.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200117190643, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 9496, moz:profile: C:\Users\warlo\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 2f47a90b-e3e7-4287-9d4c-a370ae6d4b23
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com.tyss.project.pages.HomePage.signInClk(HomePage.java:33)
-at com.tyss.project.scripts.LoginPage.tc_01(LoginPage.java:19)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'invalid.')]"}
+  (Session info: chrome=85.0.4183.83)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'WARLOCKOPAIN25L', ip: '192.168.204.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.83 (94abc2237ae0c..., userDataDir: C:\Users\warlo\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57315}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: df985cbda04c21f696d1d695d55cd291
+*** Element info: {Using=xpath, value=//span[contains(text(),'invalid.')]}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+at com.scorpiontech.project.pages.LoginPage.verifyErrMSg(LoginPage.java:71)
+at com.scorpiontech.project.scripts.TestValidLoginPage.validlogin_Test(TestValidLoginPage.java:23)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:766)
-at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
 at org.testng.SuiteRunner.run(SuiteRunner.java:286)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-at org.testng.TestNG.runSuites(TestNG.java:1039)
-at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validlogin_Test -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f]" name="tearDown" is-config="true" duration-ms="4820" started-at="2020-09-04T16:36:39 IST" finished-at="2020-09-04T16:36:43 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validlogin_Test status=FAILURE method=TestValidLoginPage.validlogin_Test()[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
             <line>
-              <![CDATA[Mouse Hovering to Account link]]>
+              <![CDATA[Taking the Screenhot]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tc_01 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tyss.project.scripts.LoginPage@5a1c0542]" name="tearDown" is-config="true" duration-ms="6875" started-at="2020-01-27T14:23:19 IST" finished-at="2020-01-27T14:23:26 IST">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.tyss.project.scripts.LoginPage -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method status="PASS" signature="printReport()[pri:0, instance:com.scorpiontech.project.scripts.TestValidLoginPage@74ad1f1f]" name="printReport" is-config="true" duration-ms="410" started-at="2020-09-04T16:37:10 IST" finished-at="2020-09-04T16:37:11 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Passcount:1]]>
+            </line>
+            <line>
+              <![CDATA[Failcount:1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- printReport -->
+      </class> <!-- com.scorpiontech.project.scripts.TestValidLoginPage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
