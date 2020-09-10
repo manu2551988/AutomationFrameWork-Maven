@@ -24,9 +24,9 @@ public interface IAutoConstant {
 
 	String PfilePath = DirPath + "/src/main/resources/propertfiles/data.properties";
 
-	String EfilePath = DirPath + "/src/test/resources/excel/TestCases_Actitime.xlsx";
+	String EfilePath = DirPath + "/src/test/resources/TestCases_Actitime.xlsx";
 	
-	String RfilePath = DirPath + "/src/test/resources/excel/Result_Report.xlsx";
+	String RfilePath = DirPath + "/src/test/resources/Result_Report.xlsx";
 
 	String screenShotPath = DirPath + "/ScreenShots/";
 	

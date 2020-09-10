@@ -24,7 +24,7 @@ public class CustomerLoginPage {
 
 	//Initialization of WebElements
 	public CustomerLoginPage(WebDriver driver) {
-		this.driver = driver;
+		CustomerLoginPage.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 

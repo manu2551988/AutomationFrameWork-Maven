@@ -9,7 +9,7 @@
 	<plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.0.0-M3</version>
+    <version>3.0.0-M5</version>
 	<configuration>
 	<suiteXmlFiles>
 	<suiteXmlFile>testng.xml</suiteXmlFile>
@@ -20,6 +20,15 @@
 	</build>
 	
 <dependencies> 
+<!-- TESTNG -->
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.3.0</version>
+</dependency>
+
+<!-- Appium Spring Framework -->
 <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 <dependency>
     <groupId>io.appium</groupId>
@@ -27,6 +36,7 @@
     <version>7.3.0</version>
 </dependency>
 
+<!-- Selenium Standalone Server -->
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
@@ -34,13 +44,46 @@
     <version>3.141.59</version>
 </dependency>
 
+<!-- Excel Jar File -->
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.17</version>
+
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml-schemas</artifactId>
+    <version>3.17</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.17</version>
+</dependency>
+
+<!-- Take ScreenShotAs -->
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
-    <version>2.6</version>
+    <version>2.7</version>
 </dependency>
 
+<!-- File Uploading -->
+<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
+<dependency>
+    <groupId>org.sikuli</groupId>
+    <artifactId>sikuli-api</artifactId>
+    <version>1.2.0</version>
+</dependency>
+
+<!-- Appium Auto Launch from code -->
 <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 <dependency>
     <groupId>org.slf4j</groupId>
@@ -63,7 +106,6 @@
     <scope>test</scope>
 </dependency>
 
-
 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
 <dependency>
     <groupId>org.apache.commons</groupId>
@@ -71,30 +113,7 @@
     <version>4.4</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>3.17</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.6</version>
-</dependency>
-
-
-
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.1.0</version>
-    <scope>test</scope>
-</dependency> 
-
+<!-- Rest API Testing -->
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
     <groupId>io.rest-assured</groupId>
@@ -110,6 +129,7 @@
     <version>4.3.1</version>
 </dependency>
 
+<!-- REST API XML PATH -->
 <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
 <dependency>
     <groupId>io.rest-assured</groupId>
@@ -152,37 +172,7 @@
     <artifactId>hamcrest-core</artifactId>
     <version>2.2</version>
     <scope>test</scope>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.6</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>3.15</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>4.1.2</version>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
-<dependency>
-    <groupId>org.sikuli</groupId>
-    <artifactId>sikuli-api</artifactId>
-    <version>1.2.0</version>
 </dependency>  
-
 
 </dependencies>
   

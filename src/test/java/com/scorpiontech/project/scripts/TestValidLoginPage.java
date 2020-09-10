@@ -20,7 +20,7 @@ public class TestValidLoginPage extends BaseTest {
 		lp.setPassword(pw);
 		lp.clickOnLoginBTN();
 		Thread.sleep(500);
-		lp.verifyErrMSg(driver);
+		//lp.verifyErrMSg(driver);
 
 	}
 
