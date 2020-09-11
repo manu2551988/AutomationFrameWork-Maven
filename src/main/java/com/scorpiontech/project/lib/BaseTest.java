@@ -36,11 +36,14 @@ public abstract class BaseTest implements IAutoConstant {
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
+			options.addArguments("incognito");
+			options.addArguments("start-maximized");
 			driver = new ChromeDriver(options);
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
 			options.addPreference("dom.webnotifications.enabled", false);
-			driver = new FirefoxDriver(options);
+			options.addPreference("browser.privatebrowsing.autostart",true);
+			driver=new FirefoxDriver(options);
 		} else if (browser.equalsIgnoreCase("edge")) {
 			EdgeOptions options = new EdgeOptions();
 			driver = new EdgeDriver(options);

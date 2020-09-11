@@ -6,15 +6,15 @@ public interface IAutoConstant {
 
 	String CHROME_KEY = "webdriver.chrome.driver";
 
-	String CHROME_VALUE = "./driver/chromedriver.exe";
+	String CHROME_VALUE = "./src/test/resources/driver/chromedriver.exe";
 
 	String GECKO_KEY = "webdriver.gecko.driver";
 
-	String GECKO_VALUE = "./driver/geckodriver.exe";
+	String GECKO_VALUE = "./src/test/resources/driver/geckodriver.exe";
 
 	String EDGE_KEY = "webdriver.edge.driver";
 
-	String EDGE_VALUE = "./driver/msedgedriver.exe";
+	String EDGE_VALUE = "./src/test/resources/driver/msedgedriver.exe";
 
 	String CHROME = "chrome";
 
@@ -28,11 +28,11 @@ public interface IAutoConstant {
 	
 	String RfilePath = DirPath + "/src/test/resources/Result_Report.xlsx";
 
-	String screenShotPath = DirPath + "/ScreenShots/";
+	String screenShotPath = DirPath + "/src/test/resources/ScreenShots/";
 	
-	String passScreenShotPath = DirPath + "/Pass-Results/";
+	String passScreenShotPath = DirPath + "/src/test/resources/Pass-Results/";
 	
-	String failScreenShotPath = DirPath + "/Fail-Results/";
+	String failScreenShotPath = DirPath + "/src/test/resources/Fail-Results/";
 
 	String URL = "http://localhost/login.do";
 
