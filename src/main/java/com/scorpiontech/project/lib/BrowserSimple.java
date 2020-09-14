@@ -49,9 +49,9 @@ abstract public class BrowserSimple implements IAutoConstant {
 
 	}
 
-	public void openApplication() {
-		driver.get(URL);
-	}
+//	public void openApplication() {
+//		driver.get(URL);
+//	}
 
 	public void logoutApplication(ITestResult res) {
 

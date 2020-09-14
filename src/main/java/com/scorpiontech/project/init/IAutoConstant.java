@@ -34,7 +34,7 @@ public interface IAutoConstant {
 	
 	String failScreenShotPath = DirPath + "/src/test/resources/Fail-Results/";
 
-	String URL = "http://localhost/login.do";
+	//String URL = "http://localhost/login.do";
 
 	long ITO = 10;
 

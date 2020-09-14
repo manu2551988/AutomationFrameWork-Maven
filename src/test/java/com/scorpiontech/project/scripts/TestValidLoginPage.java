@@ -11,6 +11,8 @@ public class TestValidLoginPage extends BaseTest {
 	@Test
 	public void validlogin_Test() throws InterruptedException
 	{	
+		String URL="http://localhost/login.do";
+		driver.get(URL);
     	String un = GenericLib.getExcelData("Sheet1", 12,0);
 		String pw = GenericLib.getExcelData("Sheet1", 12,1);
 	

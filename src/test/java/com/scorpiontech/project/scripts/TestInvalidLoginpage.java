@@ -11,7 +11,8 @@ public class TestInvalidLoginpage extends BaseTest{
 	@Test
 	public void test_InvalidLogin()throws InterruptedException 
 	{
-		
+		String URL="http://localhost/login.do";
+		driver.get(URL);
 		int rowcount = GenericLib.read_XL_RowCount(EfilePath, "Sheet1");
 		
 		LoginPage lp=new LoginPage(driver);

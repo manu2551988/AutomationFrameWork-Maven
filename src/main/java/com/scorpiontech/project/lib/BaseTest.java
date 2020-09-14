@@ -57,10 +57,10 @@ public abstract class BaseTest implements IAutoConstant {
 
 	}
 
-	@BeforeMethod
-	public void openApplication() {
-		driver.get(URL);
-	}
+//	@BeforeMethod
+//	public void openApplication() {
+//		driver.get(URL);
+//	}
 
 	@AfterMethod
 	public void tearDown(ITestResult res) {

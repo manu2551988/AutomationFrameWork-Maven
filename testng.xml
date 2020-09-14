@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.scorpiontech.project.scripts.TestValidLoginPage"/>
-    </classes>
+    <packages>
+      <package name="com.scorpiontech.project.scripts"/>
+    </packages>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
