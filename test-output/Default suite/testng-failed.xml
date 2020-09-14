@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.scorpiontech.project.scripts.TestValidLoginPage">
+      <class name="com.scorpiontech.project.scripts.Login_Page">
         <methods>
-          <include name="openApplication"/>
-          <include name="validlogin_Test"/>
+          <include name="tc_01"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="printReport"/>
         </methods>
-      </class> <!-- com.scorpiontech.project.scripts.TestValidLoginPage -->
+      </class> <!-- com.scorpiontech.project.scripts.Login_Page -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
