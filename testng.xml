@@ -2,8 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-    <packages>
-      <package name="com.scorpiontech.project.scripts"/>
-    </packages>
+    <classes>
+      <class name="com.scorpiontech.project.scripts.DemoA"/>
+      <class name="com.scorpiontech.project.scripts.TestValidLoginPage"/>
+      <class name="com.scorpiontech.project.scripts.TestInvalidLoginpage"/>
+      <class name="com.scorpiontech.project.scripts.Assertion"/>
+    </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
