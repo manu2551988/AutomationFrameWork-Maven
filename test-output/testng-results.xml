@@ -11,24 +11,24 @@
       <![CDATA[Failcount:0]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21763" started-at="2021-02-09T13:24:21 IST" finished-at="2021-02-09T13:24:43 IST">
+  <suite name="Default suite" duration-ms="24070" started-at="2021-04-04T12:28:03 IST" finished-at="2021-04-04T12:28:27 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21763" started-at="2021-02-09T13:24:21 IST" finished-at="2021-02-09T13:24:43 IST">
+    <test name="Default test" duration-ms="24070" started-at="2021-04-04T12:28:03 IST" finished-at="2021-04-04T12:28:27 IST">
       <class name="com.scorpiontech.project.scripts.Demo">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.scorpiontech.project.scripts.Demo@553a3d88]" name="setUp" is-config="true" duration-ms="10849" started-at="2021-02-09T13:24:21 IST" finished-at="2021-02-09T13:24:32 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.scorpiontech.project.scripts.Demo@78ac1102]" name="setUp" is-config="true" duration-ms="6031" started-at="2021-04-04T12:28:03 IST" finished-at="2021-04-04T12:28:09 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="TC_01()[pri:0, instance:com.scorpiontech.project.scripts.Demo@553a3d88]" name="TC_01" duration-ms="9611" started-at="2021-02-09T13:24:32 IST" finished-at="2021-02-09T13:24:42 IST">
+        <test-method status="PASS" signature="TC_01()[pri:0, instance:com.scorpiontech.project.scripts.Demo@78ac1102]" name="TC_01" duration-ms="12652" started-at="2021-04-04T12:28:09 IST" finished-at="2021-04-04T12:28:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_01 -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.scorpiontech.project.scripts.Demo@553a3d88]" name="tearDown" is-config="true" duration-ms="1197" started-at="2021-02-09T13:24:42 IST" finished-at="2021-02-09T13:24:43 IST">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.scorpiontech.project.scripts.Demo@78ac1102]" name="tearDown" is-config="true" duration-ms="5263" started-at="2021-04-04T12:28:21 IST" finished-at="2021-04-04T12:28:27 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TC_01 status=SUCCESS method=Demo.TC_01()[pri:0, instance:com.scorpiontech.project.scripts.Demo@553a3d88] output={null}]]]>
+                <![CDATA[[TestResult name=TC_01 status=SUCCESS method=Demo.TC_01()[pri:0, instance:com.scorpiontech.project.scripts.Demo@78ac1102] output={null}]]]>
               </value>
             </param>
           </params>
@@ -38,7 +38,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="printReport()[pri:0, instance:com.scorpiontech.project.scripts.Demo@553a3d88]" name="printReport" is-config="true" duration-ms="1783" started-at="2021-02-09T13:24:43 IST" finished-at="2021-02-09T13:24:45 IST">
+        <test-method status="PASS" signature="printReport()[pri:0, instance:com.scorpiontech.project.scripts.Demo@78ac1102]" name="printReport" is-config="true" duration-ms="2718" started-at="2021-04-04T12:28:27 IST" finished-at="2021-04-04T12:28:30 IST">
           <reporter-output>
             <line>
               <![CDATA[Passcount:1]]>

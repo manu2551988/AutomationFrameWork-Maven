@@ -222,6 +222,7 @@ public class GenericLib {
 			FileUtils.copyFile(src, desc);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Screenshot not taken");
 		}
 
 	}
