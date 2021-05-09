@@ -25,6 +25,24 @@ abstract public class BrowserSimple implements IAutoConstant {
 	public static int passCount = 0, failCount = 0;
 	public static WebDriver driver;
 
+	public void logoutApplication(ITestResult res) {
+
+		int status = res.getStatus();
+		String methodName = res.getName();
+		if (status == 1) {
+			passCount++;
+		} else {
+			failCount++;
+			String Photo_Path = screenShotPath + methodName + ".png";
+			GenericLib.takeScreenShotResult(driver, Photo_Path);
+		}
+
+	}
+
+//	public void openApplication() {
+//		driver.get(URL);
+//	}
+
 	public void setUp() {
 		String browser = CHROME;
 
@@ -46,24 +64,6 @@ abstract public class BrowserSimple implements IAutoConstant {
 		driver.manage().timeouts().implicitlyWait(ITO, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(PTO, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-
-	}
-
-//	public void openApplication() {
-//		driver.get(URL);
-//	}
-
-	public void logoutApplication(ITestResult res) {
-
-		int status = res.getStatus();
-		String methodName = res.getName();
-		if (status == 1) {
-			passCount++;
-		} else {
-			failCount++;
-			String Photo_Path = screenShotPath + methodName + ".png";
-			GenericLib.takeScreenShotResult(driver, Photo_Path);
-		}
 
 	}
 

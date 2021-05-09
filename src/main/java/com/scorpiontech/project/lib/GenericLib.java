@@ -27,6 +27,73 @@ public class GenericLib {
 	public static Workbook workbook;
 
 	/**
+	 * @Author: Manu Kakkar
+	 * Description: Method to verify the page titles
+	 * @param driver
+	 * @param expectedPT
+	 */
+	public static void chkPageTitle(WebDriver driver, String expectedPT) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.titleContains(expectedPT));
+
+		String actualPT = driver.getTitle();
+		if (actualPT.equals(expectedPT)) {
+			System.out.println("Expected Page is Displayed-->" + expectedPT);
+		} else {
+			System.out.println("Expected Page is NOT Displayed-->" + actualPT);
+		}
+	}
+
+	/**
+	 * @Author:Manu Kakkar 
+	 * Description: To write the Data in Excel Sheet
+	 * @param path
+	 * @param sheetName
+	 * @param rowNo
+	 * @param cellNo
+	 * @param data
+	 * 
+	 */
+
+	public static void createCell(String path, String sheetName, int rowNo, int cellNo, int data) {
+		try {
+			workbook = WorkbookFactory.create(new FileInputStream(path));
+			Cell c = workbook.getSheet(sheetName).getRow(rowNo).createCell(cellNo);
+			c.setCellValue(data);
+
+			workbook.write(new FileOutputStream(path));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * @Author:Manu Kakkar 
+	 * Description:To read Data from the Excel file of any kind by converting it String
+	 * @param sheet
+	 * @param row
+	 * @param col
+	 * @return
+	 * 
+	 */
+
+	public static String getCellNumData(String sheet, int row, int col) {
+		String data = null;
+		try {
+			FileInputStream fin = new FileInputStream(IAutoConstant.EfilePath);
+			Workbook workbook = WorkbookFactory.create(fin);
+			Sheet sht = workbook.getSheet(sheet);
+			Cell cl = sht.getRow(row).getCell(col);
+			data = cl.toString();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+
+	/**
 	 * Author: Manu Kakkar 
 	 * Description: To read the Data from Excel Sheet
 	 * @param sheet
@@ -81,30 +148,6 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
-	 * Description: To write the Data in Excel Sheet
-	 * @param path
-	 * @param sheetName
-	 * @param rowNo
-	 * @param cellNo
-	 * @param data
-	 * 
-	 */
-
-	public static void createCell(String path, String sheetName, int rowNo, int cellNo, int data) {
-		try {
-			workbook = WorkbookFactory.create(new FileInputStream(path));
-			Cell c = workbook.getSheet(sheetName).getRow(rowNo).createCell(cellNo);
-			c.setCellValue(data);
-
-			workbook.write(new FileOutputStream(path));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	/**
 	 *@Author:Manu Kakkar 
 	 * Description:To read the Expected Result in LHS from Excel Sheet by splitting the output
 	 * @param sheet
@@ -119,6 +162,8 @@ public class GenericLib {
 		String[] eData = data.split("-");
 		return eData[0];
 	}
+	
+	
 
 	/**
 	 * @Author:Manu Kakkar 
@@ -132,53 +177,6 @@ public class GenericLib {
 		String data = getExcelData(sheet, row, col);
 		String[] eData = data.split("-");
 		return eData[1];
-	}
-
-	/**
-	 * Author: Manu Kakkar 
-	 * Description: To read the total number of Rows in Excel Sheet
-	 * @param path
-	 * @param sheet
-	 * @return
-	 * 
-	 */
-	
-	public static int read_XL_RowCount(String path, String sheet) {
-		int data = 0;
-		try {
-			Workbook wb = WorkbookFactory.create(new FileInputStream(path));
-			data = wb.getSheet(sheet).getLastRowNum();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return data;
-	}
-	
-	
-
-	/**
-	 * @Author:Manu Kakkar 
-	 * Description:To read Data from the Excel file of any kind by converting it String
-	 * @param sheet
-	 * @param row
-	 * @param col
-	 * @return
-	 * 
-	 */
-
-	public static String getCellNumData(String sheet, int row, int col) {
-		String data = null;
-		try {
-			FileInputStream fin = new FileInputStream(IAutoConstant.EfilePath);
-			Workbook workbook = WorkbookFactory.create(fin);
-			Sheet sht = workbook.getSheet(sheet);
-			Cell cl = sht.getRow(row).getCell(col);
-			data = cl.toString();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return data;
 	}
 
 	/**
@@ -205,6 +203,39 @@ public class GenericLib {
 	}
 
 	/**
+	 * Author: Manu Kakkar 
+	 * Description: To read the total number of Rows in Excel Sheet
+	 * @param path
+	 * @param sheet
+	 * @return
+	 * 
+	 */
+	
+	public static int read_XL_RowCount(String path, String sheet) {
+		int data = 0;
+		try {
+			Workbook wb = WorkbookFactory.create(new FileInputStream(path));
+			data = wb.getSheet(sheet).getLastRowNum();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+
+	/**
+	 * @Author:Manu Kakkar 
+	 * Description: To read data in the XML file
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 * 
+	 */
+
+	public static String readXML(String path) throws IOException {
+		return new String(Files.readAllBytes(Paths.get(path)));
+	}
+
+	/**
 	 * @Author:Manu Kakkar 
 	 * Description:To take the ScreenShot of browser
 	 * @param driver
@@ -226,7 +257,7 @@ public class GenericLib {
 		}
 
 	}
-
+	
 	/**
 	 * @Author:Manu Kakkar 
 	 * Description:To take the ScreenShot of browser by failedtest cases
@@ -247,36 +278,5 @@ public class GenericLib {
 			e.printStackTrace();
 		}
 
-	}
-
-	/**
-	 * @Author:Manu Kakkar 
-	 * Description: To read data in the XML file
-	 * @param path
-	 * @return
-	 * @throws IOException
-	 * 
-	 */
-
-	public static String readXML(String path) throws IOException {
-		return new String(Files.readAllBytes(Paths.get(path)));
-	}
-	
-	/**
-	 * @Author: Manu Kakkar
-	 * Description: Method to verify the page titles
-	 * @param driver
-	 * @param expectedPT
-	 */
-	public static void chkPageTitle(WebDriver driver, String expectedPT) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.titleContains(expectedPT));
-
-		String actualPT = driver.getTitle();
-		if (actualPT.equals(expectedPT)) {
-			System.out.println("Expected Page is Displayed-->" + expectedPT);
-		} else {
-			System.out.println("Expected Page is NOT Displayed-->" + actualPT);
-		}
 	}
 }

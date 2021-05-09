@@ -33,6 +33,14 @@ public class LoginPage
 	}
 	//utilization of WebElements
 	
+	public void clickOnKeepMeLoggedInCheckBox()
+	{
+		chkBOX.click();
+	}
+	public void clickOnLoginBTN()
+	{
+		lognBTN.click();
+	}
 	public void login()
 	{
 		unTB.sendKeys("admin");
@@ -47,23 +55,15 @@ public class LoginPage
 		chkBOX.click();
 		lognBTN.click();
 	}
-	public void setUsername(String un)
-	{
-		unTB.sendKeys(un);
-	}
+	
 	public void setPassword(String pw)
 	{
 		pwTB.sendKeys(pw);
 	}
 	
-	public void clickOnKeepMeLoggedInCheckBox()
+	public void setUsername(String un)
 	{
-		chkBOX.click();
-	}
-	
-	public void clickOnLoginBTN()
-	{
-		lognBTN.click();
+		unTB.sendKeys(un);
 	}
 	
 	public void verifyErrMSg(WebDriver driver)

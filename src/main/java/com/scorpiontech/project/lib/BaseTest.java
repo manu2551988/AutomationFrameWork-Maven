@@ -28,6 +28,19 @@ public abstract class BaseTest implements IAutoConstant {
 	public static int passCount = 0, failCount = 0;
 	public static WebDriver driver;
 
+	@AfterSuite
+	public void printReport() {
+		Reporter.log("Passcount:"+passCount,true);
+		Reporter.log("Failcount:"+failCount,true);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
+	}
+
+//	@BeforeMethod
+//	public void openApplication() {
+//		driver.get(URL);
+//	}
+
 	@BeforeClass
 	public void setUp() {
 		String browser = CHROME;
@@ -55,12 +68,7 @@ public abstract class BaseTest implements IAutoConstant {
 		driver.manage().window().maximize();
 
 	}
-
-//	@BeforeMethod
-//	public void openApplication() {
-//		driver.get(URL);
-//	}
-
+	
 	@AfterMethod
 	public void tearDown(ITestResult res) {
 
@@ -77,14 +85,6 @@ public abstract class BaseTest implements IAutoConstant {
 		}
 		driver.close();
 
-	}
-	
-	@AfterSuite
-	public void printReport() {
-		Reporter.log("Passcount:"+passCount,true);
-		Reporter.log("Failcount:"+failCount,true);
-		GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
-		GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
 	}
 
 	
