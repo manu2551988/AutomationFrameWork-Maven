@@ -3,7 +3,6 @@
   <groupId>com.tyss</groupId>
   <artifactId>AutomationProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-	
 	<build>
 	<plugins>
 	<plugin>
