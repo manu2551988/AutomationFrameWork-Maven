@@ -41,4 +41,6 @@ public interface IAutoConstant {
 	long ETO = 10;
 
 	long PTO = 20;
+	
+	long TS=4000;
 }

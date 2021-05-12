@@ -13,7 +13,8 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import com.scorpiontech.project.init.IAutoConstant;
 
@@ -41,9 +42,9 @@ public abstract class BaseTest implements IAutoConstant {
 //		driver.get(URL);
 //	}
 
-	@BeforeClass
-	public void setUp() {
-		String browser = CHROME;
+	@BeforeMethod
+	@Parameters("browser")
+	public void setUp(String browser) {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions options = new ChromeOptions();
