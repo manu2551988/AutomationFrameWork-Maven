@@ -43,9 +43,9 @@ public abstract class BaseTest implements IAutoConstant {
 //	}
 
 	@BeforeMethod
-	@Parameters("browser")
-	public void setUp(String browser) {
-
+	//@Parameters("browser")
+	public void setUp() {
+		String browser="chrome";
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
