@@ -1,7 +1,6 @@
 package com.scorpiontech.project.lib;
 
-import java.util.concurrent.TimeUnit;
-
+import com.scorpiontech.project.init.IAutoConstant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,9 +13,8 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
-import com.scorpiontech.project.init.IAutoConstant;
+import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest implements IAutoConstant {
 
@@ -28,19 +26,6 @@ public abstract class BaseTest implements IAutoConstant {
 
 	public static int passCount = 0, failCount = 0;
 	public static WebDriver driver;
-
-	@AfterSuite
-	public void printReport() {
-		Reporter.log("Passcount:"+passCount,true);
-		Reporter.log("Failcount:"+failCount,true);
-		GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
-		GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
-	}
-
-//	@BeforeMethod
-//	public void openApplication() {
-//		driver.get(URL);
-//	}
 
 	@BeforeMethod
 	//@Parameters("browser")
@@ -69,25 +54,33 @@ public abstract class BaseTest implements IAutoConstant {
 		driver.manage().window().maximize();
 
 	}
-	
+
 	@AfterMethod
-	public void tearDown(ITestResult res) {
+	public void tearDown(ITestResult res) throws InterruptedException {
 
 		int status = res.getStatus();
 		String methodName = res.getName();
 		if (status == 1) {
 			passCount++;
-			String Photo_Path=passScreenShotPath+ methodName +".png";
+			String Photo_Path = passScreenShotPath + methodName + ".png";
 			GenericLib.takeScreenShotResult(driver, Photo_Path);
 		} else {
 			failCount++;
 			String Photo_Path = failScreenShotPath + methodName + ".png";
 			GenericLib.takeScreenShotResult(driver, Photo_Path);
 		}
+		Thread.sleep(5000);
 		driver.close();
 
 	}
 
-	
+	@AfterSuite
+	public void printReport() {
+		Reporter.log("Passcount:" + passCount, true);
+		Reporter.log("Failcount:" + failCount, true);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
+		GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
+	}
+
 
 }
