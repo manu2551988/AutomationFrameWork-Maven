@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" thread-count="5" name="Suite">
-  <test name="Chrome-Cross">
-  <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.scorpiontech.project.scripts.DemoFlip"/>
-    </classes>
-    
-  </test> <!-- Test-Cross -->
-    <test name="Firefox-Cross">
-  <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="com.scorpiontech.project.scripts.DemoFlip"/>
-    </classes>
-  </test> <!-- Test-Cross -->
+<suite parallel="tests" name="Suite">
+  <test thread-count="5" parallel="tests" name="Test">
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
