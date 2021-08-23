@@ -1,5 +1,8 @@
 package com.scorpiontech.project.lib;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,9 +16,11 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -45,7 +50,7 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
+	 * @Author: Manu Kakkar
 	 * Description: To write the Data in Excel Sheet
 	 * @param path
 	 * @param sheetName
@@ -69,8 +74,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
-	 * Description:To read Data from the Excel file of any kind by converting it String
+	 * @Author: Manu Kakkar
+	 * Description: To read Data from the Excel file of any kind by converting it String
 	 * @param sheet
 	 * @param row
 	 * @param col
@@ -102,7 +107,7 @@ public class GenericLib {
 	 * @return
 	 * 
 	 */
-	
+
 	public static String getExcelData(String sheet, int row, int col) {
 		String data = null;
 		try {
@@ -148,8 +153,8 @@ public class GenericLib {
 	}
 
 	/**
-	 *@Author:Manu Kakkar 
-	 * Description:To read the Expected Result in LHS from Excel Sheet by splitting the output
+	 *@Author: Manu Kakkar
+	 * Description: To read the Expected Result in LHS from Excel Sheet by splitting the output
 	 * @param sheet
 	 * @param row
 	 * @param col
@@ -162,12 +167,12 @@ public class GenericLib {
 		String[] eData = data.split("-");
 		return eData[0];
 	}
-	
-	
+
+
 
 	/**
-	 * @Author:Manu Kakkar 
-	 * Description:To read the Expected Result in RHS from Excel Sheet by splitting the output
+	 * @Author: Manu Kakkar
+	 * Description: To read the Expected Result in RHS from Excel Sheet by splitting the output
 	 * @param sheet
 	 * @param row
 	 * @param col
@@ -180,8 +185,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
-	 * Description:To read the Data from Property File
+	 * @Author: Manu Kakkar
+	 * Description: To read the Data from Property File
 	 * @param key
 	 * @return
 	 * 
@@ -210,7 +215,7 @@ public class GenericLib {
 	 * @return
 	 * 
 	 */
-	
+
 	public static int read_XL_RowCount(String path, String sheet) {
 		int data = 0;
 		try {
@@ -223,7 +228,7 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
+	 * @Author: Manu Kakkar
 	 * Description: To read data in the XML file
 	 * @param path
 	 * @return
@@ -236,8 +241,8 @@ public class GenericLib {
 	}
 
 	/**
-	 * @Author:Manu Kakkar 
-	 * Description:To take the ScreenShot of browser
+	 * @Author: Manu Kakkar
+	 * Description: To take the ScreenShot of browser
 	 * @param driver
 	 * @param name
 	 * 
@@ -257,9 +262,9 @@ public class GenericLib {
 		}
 
 	}
-	
+
 	/**
-	 * @Author:Manu Kakkar 
+	 * @Author: Manu Kakkar
 	 * Description:To take the ScreenShot of browser by failedtest cases
 	 * @param driver
 	 * @param path
@@ -277,6 +282,49 @@ public class GenericLib {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	/**
+	 * @Author: Manu Kakkar
+	 * Description: Open New Tab using Robot Class
+	 * @throws AWTException
+	 */
+	public static void newTab() throws AWTException {
+		Robot open = new Robot();
+		open.keyPress(KeyEvent.VK_CONTROL);
+		open.keyPress(KeyEvent.VK_T);
+		open.keyRelease(KeyEvent.VK_CONTROL);
+		open.keyRelease(KeyEvent.VK_T);
+	}
+
+	public static WebDriver driver;
+
+	/**
+	 * Author: Manu Kakkar
+	 * Description: Method to capture x,y coordinate of element on page
+	 * @param elempath
+	 */
+
+	public static void getLocation(WebElement elempath){
+		int x=elempath.getLocation().getX();
+		int y=elempath.getLocation().getY();
+
+		System.out.println("X Coordinate"+x);
+		System.out.println("Y Coordinate"+y);
+	}
+
+	/**
+	 * Author: Manu Kakkar
+	 * Description: Method to navigate to location on page
+	 * @param x
+	 * @param y
+	 */
+
+	public static void scrollToElem(int x, int y){
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("javascript:window.scrollBy("+x,y+")");
 
 	}
 }
