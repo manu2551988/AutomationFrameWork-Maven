@@ -1,8 +1,5 @@
 package jfs;
 
-import org.openqa.selenium.WebDriver.Options;
-import org.openqa.selenium.WebDriver.Window;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BasicDemo1 {

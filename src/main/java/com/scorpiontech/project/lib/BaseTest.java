@@ -1,6 +1,7 @@
 package com.scorpiontech.project.lib;
 
-import com.scorpiontech.project.init.IAutoConstant;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
-import java.util.concurrent.TimeUnit;
+import com.scorpiontech.project.init.IAutoConstant;
 
 public abstract class BaseTest implements IAutoConstant {
 

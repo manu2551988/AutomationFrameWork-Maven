@@ -1,11 +1,12 @@
 package test_scripts;
 
-import com.scorpiontech.project.lib.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+
+import com.scorpiontech.project.lib.BaseTest;
 
 public class DemoFlip extends BaseTest{
 	

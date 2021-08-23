@@ -2,7 +2,6 @@ package parameters;
 
 import org.openqa.selenium.By;
 import org.sikuli.api.robot.Key;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 

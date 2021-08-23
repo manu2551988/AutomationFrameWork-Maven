@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="5" name="Test(failed)" parallel="methods">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="parameters.Demo_Parameters">
+      <class name="parameters.Flipkart_Chrome">
         <methods>
-          <include name="TC_01"/>
+          <include name="TC01"/>
           <include name="tearDown"/>
-          <include name="setUp"/>
           <include name="printReport"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- parameters.Demo_Parameters -->
+      </class> <!-- parameters.Flipkart_Chrome -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

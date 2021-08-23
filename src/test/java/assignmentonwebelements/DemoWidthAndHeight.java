@@ -13,37 +13,31 @@ public class DemoWidthAndHeight extends BaseClass
 
 	public static void main(String[] args)
 	{
-		
+
 		openBrowser("firefox","http://demo.opensourcebilling.org");
-		
+
 		WebElement unTB = driver.findElement(By.id("email"));
-		
-		if(unTB.isDisplayed())
-		{
-			System.out.println("The UserName TextBox Element is Displayed");
-		}
-		else	
-			{
-				System.out.println("The UserName TextBox Element is not Displayed");
-			}
-	
-		
-		
+
+		int heightunTB = unTB.getSize().getHeight();
+		System.out.println("Height of the Username TextBox is --->"+heightunTB);
+
+		int widthunTB = unTB.getSize().getWidth();
+		System.out.println("Width of the Username textbox is ----->"+widthunTB);
+
+
 		System.out.println("===============================================");
-		
+
 		WebElement pwTB = driver.findElement(By.id("password"));
-		
-		if(pwTB.isDisplayed())
-		{
-			System.out.println("The PassWord Textbox element is Displayed");
-		}
-		else	
-		{
-			System.out.println("The PassWord TextBox Element is not Displayed");
-		}
-		
-		
-		
+
+
+		int heightpwTB = pwTB.getSize().getHeight();
+		System.out.println("Height of the PassWord TextBox is --->"+heightpwTB);
+
+		int widthpwTB = pwTB.getSize().getWidth();
+		System.out.println("Width of the PassWord textbox is ----->"+widthpwTB);
+
+
+
 
 	}
 

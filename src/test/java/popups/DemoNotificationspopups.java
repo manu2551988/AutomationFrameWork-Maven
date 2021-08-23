@@ -1,7 +1,6 @@
 package popups;
 
 import java.awt.AWTException;
-import java.awt.Robot;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -9,10 +8,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.opera.OperaOptions;
-import org.openqa.selenium.safari.SafariOptions;
 
 public class DemoNotificationspopups 
 {

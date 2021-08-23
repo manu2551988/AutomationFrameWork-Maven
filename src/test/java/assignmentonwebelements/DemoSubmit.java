@@ -1,7 +1,6 @@
 package assignmentonwebelements;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 /**
  * Write Selenium Script To Click on The Button Without using Click() method
