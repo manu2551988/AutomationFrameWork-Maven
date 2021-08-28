@@ -1,6 +1,7 @@
 package iframe;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -20,7 +21,15 @@ public class DemoDoubleClk extends BrowserMulti {
 		WebElement clkapp = driver.findElement(By.xpath("//a[@class='gb_D']"));
 		clkapp.click();
 		
-		
+		WebElement clkApproverTab=driver.findElement(By.xpath("abc"));
+		WebElement swtiFrame = driver.findElement(By.xpath("abc"));
+		driver.switchTo().frame(swtiFrame);
+        Thread.sleep(5000);
+        int yaxis = clkApproverTab.getLocation().getY();
+        System.out.println("Y-Coordinate:"+ yaxis);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("window.scrollBy(0,"+yaxis+")");
+        Thread.sleep(5000);
 		
 		
 		
