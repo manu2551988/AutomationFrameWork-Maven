@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import browser_setups.BrowserMulti;
 
-public class DemoDoubleClk extends BrowserMulti {
+public class Demoiframe extends BrowserMulti {
 	
 	@Test
 	public void doubleClk() throws InterruptedException 
