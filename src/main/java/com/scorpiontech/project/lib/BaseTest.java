@@ -1,5 +1,8 @@
 package com.scorpiontech.project.lib;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -57,23 +60,28 @@ public abstract class BaseTest implements IAutoConstant {
 	}
 
 	@AfterMethod
-	public void tearDown(ITestResult res) throws InterruptedException {
+	 public void tearDown(ITestResult res) throws InterruptedException {
 
-		int status = res.getStatus();
-		String methodName = res.getName();
-		if (status == 1) {
-			passCount++;
-			String Photo_Path = passScreenShotPath + methodName + ".png";
-			GenericLib.takeScreenShotResult(driver, Photo_Path);
-		} else {
-			failCount++;
-			String Photo_Path = failScreenShotPath + methodName + ".png";
-			GenericLib.takeScreenShotResult(driver, Photo_Path);
-		}
-		Thread.sleep(5000);
-		driver.close();
+        int status = res.getStatus();
+        String methodName = res.getName();
+        if (status == 1) {
+            passCount++;
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
+            Date date = new Date();
+            String Photo_Path = passScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
+            GenericLib.takeScreenShotResult(driver, Photo_Path);
+        } else {
+            failCount++;
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
+            Date date = new Date();
+            String Photo_Path = failScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
+            GenericLib.takeScreenShotResult(driver, Photo_Path);
+        }
+        Thread.sleep(5000);
+        driver.close();
 
-	}
+    }
+
 
 	@AfterSuite
 	public void printReport() {
