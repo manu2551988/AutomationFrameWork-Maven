@@ -260,6 +260,7 @@ public class GenericLib {
 			e.printStackTrace();
 			System.out.println("Screenshot not taken");
 		}
+		
 
 	}
 
