@@ -24,7 +24,6 @@ public class DemoCloseSpecificWindow2
 		
 		String parentwh = driver.getWindowHandle();
 		
-		
 		Set<String> whs = driver.getWindowHandles();
 		int count = whs.size();
 		System.out.println(count);
