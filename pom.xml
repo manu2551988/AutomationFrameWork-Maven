@@ -282,9 +282,6 @@
 			<artifactId>guava</artifactId>
 			<version>21.0</version>
 		</dependency>
-
-
-
 </dependencies>
 
 </project>
