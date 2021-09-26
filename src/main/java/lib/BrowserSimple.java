@@ -1,4 +1,4 @@
-package com.scorpiontech.project.lib;
+package lib;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import com.scorpiontech.project.init.IAutoConstant;
+import init.IAutoConstant;
 
 abstract public class BrowserSimple implements IAutoConstant {
 

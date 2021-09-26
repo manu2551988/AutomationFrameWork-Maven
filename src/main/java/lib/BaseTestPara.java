@@ -1,4 +1,4 @@
-package com.scorpiontech.project.lib;
+package lib;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +21,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.scorpiontech.project.init.IAutoConstant;
+import init.IAutoConstant;
 
 public abstract class BaseTestPara implements IAutoConstant {
 

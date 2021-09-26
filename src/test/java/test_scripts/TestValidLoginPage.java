@@ -2,9 +2,9 @@ package test_scripts;
 
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseTest;
-import com.scorpiontech.project.lib.GenericLib;
-import com.scorpiontech.project.pages.LoginPage;
+import lib.BaseTest;
+import lib.GenericLib;
+import pages.LoginPage;
 
 public class TestValidLoginPage extends BaseTest {
 

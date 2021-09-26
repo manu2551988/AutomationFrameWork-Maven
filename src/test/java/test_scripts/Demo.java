@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseTest;
+import lib.BaseTest;
 
 public class Demo extends BaseTest{
 	

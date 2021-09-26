@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseTestPara;
-import com.scorpiontech.project.pages.Flipkart_Home;
-import com.scorpiontech.project.pages.Flipkart_ItemPage;
+import lib.BaseTestPara;
+import pages.Flipkart_Home;
+import pages.Flipkart_ItemPage;
 
 public class Flipkart_Edge extends BaseTestPara {
 	

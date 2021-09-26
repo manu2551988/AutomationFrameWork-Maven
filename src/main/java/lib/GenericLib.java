@@ -1,4 +1,4 @@
-package com.scorpiontech.project.lib;
+package lib;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -31,7 +31,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import com.scorpiontech.project.init.IAutoConstant;
+import init.IAutoConstant;
 
 public class GenericLib {
 

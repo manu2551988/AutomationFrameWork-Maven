@@ -1,4 +1,4 @@
-package com.scorpiontech.project.init;
+package init;
 
 public interface IAutoConstant {
 

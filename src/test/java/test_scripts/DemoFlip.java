@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseTest;
+import lib.BaseTest;
 
 public class DemoFlip extends BaseTest{
 	

@@ -5,7 +5,7 @@ import org.sikuli.api.robot.Key;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.scorpiontech.project.lib.BaseTest;
+import lib.BaseTest;
 
 public class Demo_Parameters extends BaseTest {
 	

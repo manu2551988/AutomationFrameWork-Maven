@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.scorpiontech.project.lib.GenericLib;
+import lib.GenericLib;
 
 public class Assertion {
 	
