@@ -7,17 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-public class LoginPage
-{
-		
+public class LoginPage {
+
+	private WebDriver driver;
+
 	//declaration of variable
-	@FindBy(id="username")
+	@FindBy(id = "username")
 	private WebElement unTB;
-	
-	@FindBy(name="pwd")
+
+	@FindBy(name = "pwd")
 	private WebElement pwTB;
-	
-	@FindBy(id="keepLoggedInCheckBox")
+
+	@FindBy(id = "keepLoggedInCheckBox")
 	private WebElement chkBOX;
 	
 	@FindBy(xpath="//div[text()='Login ']")
@@ -29,7 +30,8 @@ public class LoginPage
 	//initialize the Elements
 	public LoginPage(WebDriver driver)
 	{
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 	//utilization of WebElements
 	

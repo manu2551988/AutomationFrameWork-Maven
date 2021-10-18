@@ -1,29 +1,22 @@
 package pages;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.File;
+import java.io.IOException;
+
 public class Flipkart_ItemPage {
 
-	public static WebDriver driver;
+	private WebDriver driver;
 
-	@FindBy(xpath="//div[.='APPLE iPhone 12 Pro (Graphite, 256 GB)']")
+	@FindBy(xpath = "//div[.='APPLE iPhone 12 Pro (Graphite, 256 GB)']")
 	private WebElement clkItem;
 
-	@FindBy(xpath="//button[@class=\"_2KpZ6l _2U9uOA _3v1-ww\"]")
+	@FindBy(xpath = "//button[@class=\"_2KpZ6l _2U9uOA _3v1-ww\"]")
 	private WebElement clkAddtoCart;
 
 	@FindBy(xpath="//span[.='Place Order']")
@@ -43,6 +36,7 @@ public class Flipkart_ItemPage {
 
 	public Flipkart_ItemPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
 

@@ -1,7 +1,19 @@
 package lib;
 
-import java.awt.AWTException;
-import java.awt.Robot;
+import init.IAutoConstant;
+import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,25 +26,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-
-import init.IAutoConstant;
-
 public class GenericLib {
 
 	public static Workbook workbook;
@@ -40,18 +33,17 @@ public class GenericLib {
 	public static int passCount = 0, failCount = 0;
 
 	/**
-	 * @param driver
 	 * @param expectedPT
-	 * @Author: Manu Kakkar
-	 * Description: Method to verify the page titles
+	 * @Author: Manu Kakkar Description: Method to verify the page titles
+	 * Description: Method to validate the Page Title
 	 */
-	public static void chkPageTitle(WebDriver driver, String expectedPT) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+	public static void chkPageTitle(String expectedPT) {
+		WebDriverWait wait = new WebDriverWait(BaseTest.driver, 10);
 		wait.until(ExpectedConditions.titleContains(expectedPT));
 
-		String actualPT = driver.getTitle();
+		String actualPT = BaseTest.driver.getTitle();
 		if (actualPT.equals(expectedPT)) {
-			System.out.println("Expected Page is Displayed-->" + expectedPT);
+			System.out.println("Expected Page is Displayed-->" + actualPT);
 		} else {
 			System.out.println("Expected Page is NOT Displayed-->" + actualPT);
 		}

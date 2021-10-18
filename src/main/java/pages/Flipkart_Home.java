@@ -1,23 +1,24 @@
 package pages;
 
+import lib.GenericLib;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import lib.GenericLib;
-
 public class Flipkart_Home {
 
+	private WebDriver driver;
+
 	//Declaration of WebElements
-	@FindBy(xpath="/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input")
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input")
 	private WebElement inputEmail;
 
-	@FindBy(xpath="/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input")
-	private WebElement inputPass;	
+	@FindBy(xpath = "/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input")
+	private WebElement inputPass;
 
-	@FindBy(xpath="(//span[.='Login'])[3]")
+	@FindBy(xpath = "(//span[.='Login'])[3]")
 	private WebElement clkLogin;
 
 	@FindBy(name="q")
@@ -27,6 +28,7 @@ public class Flipkart_Home {
 	public Flipkart_Home(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 	}
 
 	//Utilization of WebElements
