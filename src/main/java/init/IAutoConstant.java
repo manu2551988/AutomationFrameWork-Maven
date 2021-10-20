@@ -36,11 +36,11 @@ public interface IAutoConstant {
 
 	//String URL = "http://localhost/login.do";
 
-	long ITO = 10;
+	long ITO = 20;
 
 	long ETO = 10;
 
-	long PTO = 20;
+    long PTO = 30;
 	
 	long TS=4000;
 }
