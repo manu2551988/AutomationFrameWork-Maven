@@ -36,7 +36,7 @@ public abstract class BaseTestPara implements IAutoConstant {
     @BeforeSuite
     public void extentReportStart() {
 
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
+        DateFormat dateFormat = new SimpleDateFormat("dd-M-yy hh-mm-ss aa");
         Date date = new Date();
 
 //        String className = this.getClass().getSuperclass().getName();
