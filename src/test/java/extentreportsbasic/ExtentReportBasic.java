@@ -10,7 +10,7 @@ public class ExtentReportBasic {
 
     public static void main(String[] args) {
         // start reporters
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Extent-Report/Spark.html");
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/Spark.html");
 
         // create ExtentReports and attach reporter(s)
         ExtentReports extent = new ExtentReports();

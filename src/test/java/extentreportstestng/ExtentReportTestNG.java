@@ -18,7 +18,7 @@ public class ExtentReportTestNG {
     public void extentReportStart() {
 
         // start reporters
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Extent-Report/Spark.html");
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/Spark.html");
 
         // create ExtentReports and attach reporter(s)
         extent = new ExtentReports();

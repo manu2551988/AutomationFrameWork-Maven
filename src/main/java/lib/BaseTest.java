@@ -1,5 +1,7 @@
 package lib;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import init.IAutoConstant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +15,7 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,6 +32,28 @@ public abstract class BaseTest implements IAutoConstant {
         System.setProperty(CHROME_KEY, CHROME_VALUE);
         System.setProperty(GECKO_KEY, GECKO_VALUE);
         System.setProperty(EDGE_KEY, EDGE_VALUE);
+    }
+
+    public ExtentReports extent;
+
+    @BeforeSuite
+    public void extentReportStart() {
+
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
+        Date date = new Date();
+
+//        String className = this.getClass().getSuperclass().getName();
+//        String className = this.getClass().getCanonicalName();
+        String className = this.getClass().getSimpleName();
+
+        // start reporters
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/" + className + " " +
+                dateFormat.format(date) + ".html");
+
+        // create ExtentReports and attach reporter(s)
+        extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
+
     }
 
     /*@BeforeClass
@@ -190,10 +215,13 @@ public abstract class BaseTest implements IAutoConstant {
 
     @AfterSuite
     public void printReport() {
+
         Reporter.log("PassCount:" + passCount, true);
         Reporter.log("FailCount:" + failCount, true);
         GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
         GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
+
+        extent.flush();
     }
 
 

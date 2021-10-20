@@ -1,5 +1,7 @@
 package test_scripts;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import lib.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -12,7 +14,10 @@ public class DemoFlip extends BaseTest {
     @Test
     public void TC_01() {
 
+        ExtentTest test = extent.createTest("Search iPhone 12 pro max", "Search for product on Flipkart");
+
         driver.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();
+        test.pass("Clicked on cross button");
 
         try {
             Thread.sleep(3000);
@@ -30,7 +35,12 @@ public class DemoFlip extends BaseTest {
     @Test
     public void TC_02() {
 
+        ExtentTest test = extent.createTest("Search iPhone 13 pro", "Search for product on Flipkart");
+
+        test.log(Status.INFO, "Opening Flipkart Page");
+
         driver.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();
+        test.pass("Clicked on cross button");
 
         try {
             Thread.sleep(3000);
