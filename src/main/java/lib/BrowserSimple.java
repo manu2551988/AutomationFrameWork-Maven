@@ -34,7 +34,7 @@ abstract public class BrowserSimple implements IAutoConstant {
 		} else {
 			failCount++;
 			String Photo_Path = screenShotPath + methodName + ".png";
-			GenericLib.takeScreenShotResult(driver, Photo_Path);
+			ElementUtils.takeScreenShotResult(driver, Photo_Path);
 		}
 
 	}

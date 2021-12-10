@@ -47,7 +47,7 @@ public abstract class BaseTest implements IAutoConstant {
         String className = this.getClass().getSimpleName();
 
         // start reporters
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/" + className + " " +
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/" + className + "-" +
                 dateFormat.format(date) + ".html");
 
         // create ExtentReports and attach reporter(s)
@@ -108,8 +108,6 @@ public abstract class BaseTest implements IAutoConstant {
             Reporter.log("No Browser Configuration Found", true);
         }
 
-        driver.get("https://www.flipkart.com/");
-
         driver.manage().timeouts().implicitlyWait(ITO, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(PTO, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -137,14 +135,14 @@ public abstract class BaseTest implements IAutoConstant {
             passCount++;
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
             Date date = new Date();
-            String Photo_Path = passScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-            GenericLib.takeScreenShotResult(driver, Photo_Path);
+            String Photo_Path = passScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+            ElementUtils.takeScreenShotResult(driver, Photo_Path);
         } else {
             failCount++;
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
             Date date = new Date();
-            String Photo_Path = failScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-            GenericLib.takeScreenShotResult(driver, Photo_Path);
+            String Photo_Path = failScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+            ElementUtils.takeScreenShotResult(driver, Photo_Path);
         }
         try {
             Thread.sleep(5000);
@@ -220,7 +218,6 @@ public abstract class BaseTest implements IAutoConstant {
         Reporter.log("FailCount:" + failCount, true);
         GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
         GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
-
         extent.flush();
     }
 

@@ -33,28 +33,12 @@ public class GenericLib {
 	public static int passCount = 0, failCount = 0;
 
 	/**
-	 * @param expectedPT
-	 * @Author: Manu Kakkar Description: Method to verify the page titles
-	 * Description: Method to validate the Page Title
-	 */
-	public static void chkPageTitle(String expectedPT) {
-		WebDriverWait wait = new WebDriverWait(BaseTest.driver, 10);
-		wait.until(ExpectedConditions.titleContains(expectedPT));
-
-		String actualPT = BaseTest.driver.getTitle();
-		if (actualPT.equals(expectedPT)) {
-			System.out.println("Expected Page is Displayed-->" + actualPT);
-		} else {
-			System.out.println("Expected Page is NOT Displayed-->" + actualPT);
-		}
-	}
-
-	/**
 	 * @param path
 	 * @param sheetName
 	 * @param rowNo
 	 * @param cellNo
 	 * @param data
+	 *
 	 * @Author: Manu Kakkar
 	 * Description: To write the Data in Excel Sheet
 	 */
@@ -77,6 +61,7 @@ public class GenericLib {
 	 * @param row
 	 * @param col
 	 * @return
+	 *
 	 * @Author: Manu Kakkar
 	 * Description: To read Data from the Excel file of any kind by converting it String
 	 */
@@ -155,6 +140,7 @@ public class GenericLib {
 	 * @param row
 	 * @param col
 	 * @return
+	 *
 	 * @Author: Manu Kakkar
 	 * Description: To read the Expected Result in LHS from Excel Sheet by splitting the output
 	 */
@@ -170,6 +156,7 @@ public class GenericLib {
 	 * @param row
 	 * @param col
 	 * @return
+	 *
 	 * @Author: Manu Kakkar
 	 * Description: To read the Expected Result in RHS from Excel Sheet by splitting the output
 	 */
@@ -182,6 +169,7 @@ public class GenericLib {
 	/**
 	 * @param key
 	 * @return
+	 *
 	 * @Author: Manu Kakkar
 	 * Description: To read the Data from Property File
 	 */
@@ -233,49 +221,6 @@ public class GenericLib {
 		return new String(Files.readAllBytes(Paths.get(path)));
 	}
 
-	/**
-	 * @param driver
-	 * @param name
-	 * @Author: Manu Kakkar
-	 * Description: To take the ScreenShot of browser
-	 */
-
-	public static void takeScreenShot(WebDriver driver, String name) {
-
-		try {
-			TakesScreenshot ts = (TakesScreenshot) driver;
-			File src = ts.getScreenshotAs(OutputType.FILE);
-			Reporter.log("Taking the Screenhot of" + name);
-			File desc = new File(IAutoConstant.screenShotPath + name + ".png");
-			FileUtils.copyFile(src, desc);
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Screenshot not taken");
-		}
-		
-
-	}
-
-	/**
-	 * @param driver
-	 * @param path
-	 * @Author: Manu Kakkar
-	 * Description:To take the ScreenShot of browser by failed test cases
-	 */
-
-	public static void takeScreenShotResult(WebDriver driver, String path) {
-
-		try {
-			TakesScreenshot ts = (TakesScreenshot) driver;
-			File src = ts.getScreenshotAs(OutputType.FILE);
-			Reporter.log("Taking the Screenhot");
-			File desc = new File(path);
-			FileUtils.copyFile(src, desc);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
 
 	/**
 	 * @throws AWTException
@@ -295,12 +240,12 @@ public class GenericLib {
 	 * Author: Manu Kakkar
 	 * Description: Method to capture x,y coordinate of element on page
 	 *
-	 * @param elempath
+	 * @param elemPath
 	 */
 
-	public static void getLocation(WebElement elempath) {
-		int x = elempath.getLocation().getX();
-		int y = elempath.getLocation().getY();
+	public static void getLocation(WebElement elemPath) {
+		int x = elemPath.getLocation().getX();
+		int y = elemPath.getLocation().getY();
 
 		System.out.println("X Coordinate" + x);
 		System.out.println("Y Coordinate" + y);
@@ -347,35 +292,6 @@ public class GenericLib {
 				until(ExpectedConditions.visibilityOfElementLocated(By.xpath("element"))));
 	}
 
-	/**
-	 * Author: Manu Kakkar
-	 * Description : Method to TakeScreenShot using Dynamic name for Fail Test Script
-	 *
-	 * @param fileName
-	 * @throws IOException
-	 */
-
-	public static void getScreenShotFail(String fileName) throws IOException {
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-		Date date = new Date();
-		File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(IAutoConstant.failScreenShotPath + fileName + "-" + dateFormat.format(date) + ".png"));
-	}
-
-	/**
-	 * Author: Manu Kakkar
-	 * Description: Method to TakeScreenShot using Dynamic name for Pass Test Script
-	 *
-	 * @param fileName
-	 * @throws IOException
-	 */
-	public static void getScreenShotPass(String fileName) throws IOException {
-
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-		Date date = new Date();
-		File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(IAutoConstant.failScreenShotPath + fileName + "-" + dateFormat.format(date) + ".png"));
-	}
 
 	/**
 	 * Author: Manu Kakkar
@@ -384,7 +300,6 @@ public class GenericLib {
 	 * @param res
 	 * @throws InterruptedException
 	 */
-
 	public static void tearDown(ITestResult res) throws InterruptedException {
 
 		int status = res.getStatus();
@@ -393,32 +308,18 @@ public class GenericLib {
 			passCount++;
 			DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
 			Date date = new Date();
-			String Photo_Path = IAutoConstant.passScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-			GenericLib.takeScreenShotResult(BaseTest.driver, Photo_Path);
+			String Photo_Path = IAutoConstant.passScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+			ElementUtils.takeScreenShotResult(BaseTest.driver, Photo_Path);
 		} else {
 			failCount++;
 			DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
 			Date date = new Date();
-			String Photo_Path = IAutoConstant.failScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-			GenericLib.takeScreenShotResult(BaseTest.driver, Photo_Path);
+			String Photo_Path = IAutoConstant.failScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+			ElementUtils.takeScreenShotResult(BaseTest.driver, Photo_Path);
 		}
 		Thread.sleep(5000);
 		BaseTest.driver.close();
 
 	}
 
-	/**
-	 * Author: Manu Kakkar
-	 * Description: Method to TakeScreenShot at Random Point
-	 *
-	 * @param filename
-	 * @throws IOException
-	 */
-	public static void getScreenShotRandom(String filename) throws IOException {
-
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-		Date date = new Date();
-		File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(IAutoConstant.screenShotPath + filename + "-" + dateFormat.format(date) + ".png"));
-	}
 }

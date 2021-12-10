@@ -29,12 +29,14 @@ public interface IAutoConstant {
 	String RfilePath = DirPath + "/src/test/resources/Result_Report.xlsx";
 
 	String screenShotPath = DirPath + "/src/test/resources/ScreenShots/";
+
+	String screenShotPathWebElement = DirPath + "/src/test/resources/WebElemScreeShot/";
 	
 	String passScreenShotPath = DirPath + "/src/test/resources/Pass-Results/";
 	
 	String failScreenShotPath = DirPath + "/src/test/resources/Fail-Results/";
 
-	//String URL = "http://localhost/login.do";
+	String URL = "http://localhost/login.do";
 
 	long ITO = 20;
 

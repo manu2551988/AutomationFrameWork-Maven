@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class BaseTestPara implements IAutoConstant {
 
     public static int passCount = 0, failCount = 0;
+
     public static WebDriver driver;
 
     static {
@@ -45,7 +46,7 @@ public abstract class BaseTestPara implements IAutoConstant {
 
         // start reporters
         ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/" + className +
-                dateFormat.format(date) + ".html");
+                "-" + dateFormat.format(date) + ".html");
 
         // create ExtentReports and attach reporter(s)
         extent = new ExtentReports();
@@ -104,8 +105,6 @@ public abstract class BaseTestPara implements IAutoConstant {
             Reporter.log("No Browser Configuration Found", true);
         }
 
-        driver.get("https://www.flipkart.com/");
-
         driver.manage().timeouts().implicitlyWait(ITO, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(PTO, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -134,14 +133,14 @@ public abstract class BaseTestPara implements IAutoConstant {
             passCount++;
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
             Date date = new Date();
-            String Photo_Path = passScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-            GenericLib.takeScreenShotResult(driver, Photo_Path);
+            String Photo_Path = passScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+            ElementUtils.takeScreenShotResult(driver, Photo_Path);
         } else {
             failCount++;
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
             Date date = new Date();
-            String Photo_Path = failScreenShotPath + methodName + " " + dateFormat.format(date) + ".png";
-            GenericLib.takeScreenShotResult(driver, Photo_Path);
+            String Photo_Path = failScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
+            ElementUtils.takeScreenShotResult(driver, Photo_Path);
         }
 
         try {
