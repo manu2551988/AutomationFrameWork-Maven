@@ -133,8 +133,6 @@
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-junit:7.0.0-RC1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.13.2" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-java:7.0.0-RC1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-picocontainer:7.0.0-RC1" level="project" />
-    <orderEntry type="library" name="Maven: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:7.0.0-RC1" level="project" />
     <orderEntry type="library" name="Maven: net.masterthought:cucumber-reporting:5.5.4" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.1" level="project" />
@@ -153,6 +151,8 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:jetty-repacked:9.4.12.v20180830" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.19" level="project" />
+    <orderEntry type="library" name="Maven: io.cucumber:cucumber-picocontainer:7.0.0-RC1" level="project" />
+    <orderEntry type="library" name="Maven: org.picocontainer:picocontainer:2.15" level="project" />
     <orderEntry type="library" name="Maven: com.aventstack:extentreports:5.0.9" level="project" />
     <orderEntry type="library" name="Maven: io.reactivex.rxjava3:rxjava:3.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />

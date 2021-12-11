@@ -4,43 +4,6 @@
     <groupId>com.tyss</groupId>
     <artifactId>AutomationProject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
-                <configuration>
-                    <useSystemClassLoader>false</useSystemClassLoader>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArgument>-Werror</compilerArgument>
-
-                    <!--					<systemPropertyVariables>-->
-                    <!--						<property>-->
-                    <!--							<name>browser</name>-->
-                    <!--							<value>${browser}</value>-->
-                    <!--						</property>-->
-                    <!--						<property>-->
-                    <!--							<name>cloud_config</name>-->
-                    <!--							<value>${cloud_config}</value>-->
-                    <!--						</property>-->
-                    <!--					</systemPropertyVariables>-->
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
 
@@ -69,11 +32,11 @@
             <version>3.141.59</version>
         </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>org.seleniumhq.selenium</groupId>-->
-<!--                <artifactId>selenium-java</artifactId>-->
-<!--                <version>4.0.0</version>-->
-<!--            </dependency>-->
+        <!--            <dependency>-->
+        <!--                <groupId>org.seleniumhq.selenium</groupId>-->
+        <!--                <artifactId>selenium-java</artifactId>-->
+        <!--                <version>4.0.0</version>-->
+        <!--            </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
@@ -272,12 +235,12 @@
             <version>6.9.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>6.9.0</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer &ndash;&gt;
+                <dependency>
+                    <groupId>io.cucumber</groupId>
+                    <artifactId>cucumber-picocontainer</artifactId>
+                    <version>6.9.0</version>
+                </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
@@ -548,4 +511,42 @@
         </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Werror</compilerArgument>
+
+                    <!--					<systemPropertyVariables>-->
+                    <!--						<property>-->
+                    <!--							<name>browser</name>-->
+                    <!--							<value>${browser}</value>-->
+                    <!--						</property>-->
+                    <!--						<property>-->
+                    <!--							<name>cloud_config</name>-->
+                    <!--							<value>${cloud_config}</value>-->
+                    <!--						</property>-->
+                    <!--					</systemPropertyVariables>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
