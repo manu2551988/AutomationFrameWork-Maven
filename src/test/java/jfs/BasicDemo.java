@@ -6,7 +6,7 @@ public class BasicDemo {
 	
 	static
 	{
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".src/test/resources/driver/chromedriver.exe");
 	}
 
 	public static void main(String[] args)
@@ -21,7 +21,7 @@ public class BasicDemo {
 
 //Optimization we use method chaining
 
-       driver.get("http://www.google.com");
+		//  driver.get("https://www.google.com");
 
 
 	}

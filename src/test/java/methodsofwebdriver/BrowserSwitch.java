@@ -1,13 +1,12 @@
 package methodsofwebdriver;
 
-import java.util.ArrayList;
-import java.util.Set;
-
+import browser_setups.BrowserSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import browser_setups.BrowserSetup;
+import java.util.ArrayList;
+import java.util.Set;
 
 public class BrowserSwitch extends BrowserSetup {
 	

@@ -1,11 +1,10 @@
 package dropdown;
 
-import java.util.List;
-
+import browser_setups.BrowserSimple;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import browser_setups.BrowserSimple;
+import java.util.List;
 
 public class AssignBerry extends BrowserSimple {
 

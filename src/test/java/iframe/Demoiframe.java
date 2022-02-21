@@ -1,12 +1,11 @@
 package iframe;
 
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import browser_setups.BrowserMulti;
 
 public class Demoiframe extends BrowserMulti {
 	

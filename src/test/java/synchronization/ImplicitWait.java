@@ -1,14 +1,13 @@
 package synchronization;
 
-import java.util.concurrent.TimeUnit;
-
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import browser_setups.BrowserMulti;
+import java.util.concurrent.TimeUnit;
 
 public class ImplicitWait extends BrowserMulti{
 	

@@ -1,24 +1,21 @@
 package popups;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class FileDownloadPopups2 {
-	static
-	{
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver","./driver/geckodriver.exe");
-	}
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
 
-	public static void main(String[] args) throws AWTException, InterruptedException 
-	{
+public class FileDownloadPopups2 {
+    static {
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+    }
+
+    public static void main(String[] args) throws AWTException, InterruptedException {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.manage().window().maximize();

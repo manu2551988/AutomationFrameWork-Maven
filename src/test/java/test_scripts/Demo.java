@@ -1,11 +1,10 @@
 package test_scripts;
 
+import lib.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import lib.BaseTest;
 
 public class Demo extends BaseTest{
 	

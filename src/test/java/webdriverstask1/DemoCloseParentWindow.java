@@ -1,19 +1,17 @@
 package webdriverstask1;
 
-import java.util.Set;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DemoCloseParentWindow 
-{	
-	static
-	{
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver","./driver/geckodriver.exe");
-	}
-	
-	public static void main(String[] args) 
+import java.util.Set;
+
+public class DemoCloseParentWindow {
+    static {
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+    }
+
+    public static void main(String[] args)
 	{
 		
 		WebDriver driver=new ChromeDriver();

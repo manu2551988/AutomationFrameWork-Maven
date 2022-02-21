@@ -1,10 +1,9 @@
 package dropdown;
 
+import browser_setups.BrowserSimple;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import browser_setups.BrowserSimple;
 
 public class AssignLast extends BrowserSimple {
 	

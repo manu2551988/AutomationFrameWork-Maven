@@ -1,9 +1,8 @@
 package dropdown;
 
+import browser_setups.BrowserSimple;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import browser_setups.BrowserSimple;
 
 public class AssignBB extends BrowserSimple {
 

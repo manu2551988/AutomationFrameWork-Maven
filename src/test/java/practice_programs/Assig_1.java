@@ -1,21 +1,15 @@
 package practice_programs;
 
-import java.awt.AWTException;
+import browser_setups.BrowserSetup;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.testng.annotations.Test;
+
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
-
-import browser_setups.BrowserSetup;
 
 public class Assig_1 extends BrowserSetup{
 	

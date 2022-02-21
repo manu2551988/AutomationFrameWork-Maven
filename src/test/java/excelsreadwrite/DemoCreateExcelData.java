@@ -1,24 +1,22 @@
 package excelsreadwrite;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class DemoCreateExcelData {
-	
-	public static Workbook wb;
-	
-	public static void createSheet(String path,String sheetName)
-	{
-		try
-		{
-		 wb = WorkbookFactory.create(new FileInputStream(path));
+
+    public static Workbook wb;
+
+    public static void createSheet(String path, String sheetName) {
+        try {
+            wb = WorkbookFactory.create(new FileInputStream(path));
 		 wb.createSheet(sheetName);
 		 
 		 wb.write(new FileOutputStream(path));

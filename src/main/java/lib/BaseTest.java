@@ -3,6 +3,7 @@ package lib;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import init.IAutoConstant;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,11 +29,11 @@ public abstract class BaseTest implements IAutoConstant {
     public static int passCount = 0, failCount = 0;
     public static WebDriver driver;
 
-    static {
-        System.setProperty(CHROME_KEY, CHROME_VALUE);
-        System.setProperty(GECKO_KEY, GECKO_VALUE);
-        System.setProperty(EDGE_KEY, EDGE_VALUE);
-    }
+//    static {
+//        System.setProperty(CHROME_KEY, CHROME_VALUE);
+//        System.setProperty(GECKO_KEY, GECKO_VALUE);
+//        System.setProperty(EDGE_KEY, EDGE_VALUE);
+//    }
 
     public ExtentReports extent;
 
@@ -95,14 +96,17 @@ public abstract class BaseTest implements IAutoConstant {
             options.addArguments("--disable-notifications");
             options.addArguments("incognito");
             options.addArguments("start-maximized");
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
             options.addPreference("dom.webnotifications.enabled", false);
             options.addPreference("browser.privatebrowsing.autostart", true);
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
+            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver(options);
         } else {
             Reporter.log("No Browser Configuration Found", true);

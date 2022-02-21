@@ -1,12 +1,11 @@
 package scrolltoele;
 
-import java.util.Set;
-
+import assignmentonwebelements.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import assignmentonwebelements.BaseClass;
+import java.util.Set;
 
 /**
  * Write Selenium Script To scroll the window to desired location

@@ -1,21 +1,20 @@
 package browser_setups;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class BrowserSimple {
-	
-	static 
-	{
-		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
-		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
-				
-	}
+
+    static {
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+
+    }
 	
 //	Browser Setup in order to launching any browser as per requirement
 //	Author Manu Kakkar

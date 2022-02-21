@@ -1,9 +1,9 @@
 package assignmentonwebelements;
 
+import org.openqa.selenium.By;
+
 import java.io.IOException;
 import java.util.Set;
-
-import org.openqa.selenium.By;
 
 /**
  * Write Selenium Script To Handle Multiple Tabs

@@ -1,14 +1,11 @@
 package screenshot;
 
 import init.IAutoConstant;
-import lib.BaseTest;
 import lib.BaseTestMulti;
-import lib.ElementUtils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.testng.annotations.Test;
 
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;

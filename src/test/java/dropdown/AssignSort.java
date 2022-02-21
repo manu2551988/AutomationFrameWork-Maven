@@ -1,14 +1,13 @@
 package dropdown;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
+import browser_setups.BrowserSimple;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import browser_setups.BrowserSimple;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class AssignSort extends BrowserSimple {
 	

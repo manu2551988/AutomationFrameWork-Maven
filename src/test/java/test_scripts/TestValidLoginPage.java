@@ -1,9 +1,8 @@
 package test_scripts;
 
-import org.testng.annotations.Test;
-
 import lib.BaseTest;
 import lib.GenericLib;
+import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class TestValidLoginPage extends BaseTest {

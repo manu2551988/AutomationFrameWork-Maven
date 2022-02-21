@@ -1,11 +1,10 @@
 package practice_programs;
 
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
-import browser_setups.BrowserMulti;
 
 public class Assig_2 extends BrowserMulti {
 	

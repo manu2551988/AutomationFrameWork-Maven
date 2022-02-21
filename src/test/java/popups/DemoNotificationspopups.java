@@ -1,23 +1,20 @@
 package popups;
 
-import java.awt.AWTException;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class DemoNotificationspopups 
-{
-	static
-	{
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-	}
+import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
-	public static void main(String[] args) throws AWTException 
-	{
+public class DemoNotificationspopups {
+    static {
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+    }
+
+    public static void main(String[] args) throws AWTException {
 	
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");

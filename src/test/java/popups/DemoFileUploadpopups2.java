@@ -1,14 +1,5 @@
 package popups;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class DemoFileUploadpopups2 {
-	
-	static
-	{
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-	}
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
-	public static void main(String[] args) throws AWTException 
-	{
+public class DemoFileUploadpopups2 {
+
+    static {
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+    }
+
+    public static void main(String[] args) throws AWTException {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);

@@ -1,10 +1,9 @@
 package scrolltoele;
 
-import java.util.Set;
-
+import assignmentonwebelements.BaseClass;
 import org.openqa.selenium.By;
 
-import assignmentonwebelements.BaseClass;
+import java.util.Set;
 
 /**
  * Write Selenium Script To 

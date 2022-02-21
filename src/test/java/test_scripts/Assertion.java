@@ -1,14 +1,13 @@
 package test_scripts;
 
-import java.util.HashSet;
-
+import lib.GenericLib;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import lib.GenericLib;
+import java.util.HashSet;
 
 public class Assertion {
 	

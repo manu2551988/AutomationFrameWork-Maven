@@ -1,7 +1,6 @@
 package lib;
 
-import java.util.concurrent.TimeUnit;
-
+import init.IAutoConstant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import init.IAutoConstant;
+import java.util.concurrent.TimeUnit;
 
 abstract public class BrowserSimple implements IAutoConstant {
 

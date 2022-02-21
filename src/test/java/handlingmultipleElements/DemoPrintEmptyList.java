@@ -1,12 +1,11 @@
 package handlingmultipleElements;
 
-import java.util.List;
-
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import browser_setups.BrowserMulti;
+import java.util.List;
 
 public class DemoPrintEmptyList extends BrowserMulti {
 	

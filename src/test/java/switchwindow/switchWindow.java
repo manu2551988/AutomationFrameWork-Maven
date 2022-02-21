@@ -1,17 +1,15 @@
 package switchwindow;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
+import init.IAutoConstant;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import init.IAutoConstant;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class switchWindow implements IAutoConstant{
 	

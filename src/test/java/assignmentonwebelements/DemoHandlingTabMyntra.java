@@ -1,21 +1,20 @@
 package assignmentonwebelements;
 
-import java.io.IOException;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+import java.util.Set;
+
 /**
  * Write Selenium Script To Handle Multiple Tabs
- * @author Manu Kakkar
  *
+ * @author Manu Kakkar
  */
-public class DemoHandlingTabMyntra extends BaseClass
-{
+public class DemoHandlingTabMyntra extends BaseClass {
 
-	public static void main(String[] args) throws IOException, InterruptedException
+    public static void main(String[] args) throws IOException, InterruptedException
 	{
 		
 		openBrowser("chrome","http://www.myntra.com");

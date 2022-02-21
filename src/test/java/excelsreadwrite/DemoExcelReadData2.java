@@ -1,9 +1,9 @@
 package excelsreadwrite;
 
+import org.apache.poi.EncryptedDocumentException;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
 /**
  * Read the Numeric Cell Value
  * @author Sunil

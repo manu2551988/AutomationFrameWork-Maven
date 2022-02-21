@@ -1,15 +1,13 @@
 package keyboardandmouseactions;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import browser_setups.BrowserMulti;
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class actitimecontextclk extends BrowserMulti{
 	

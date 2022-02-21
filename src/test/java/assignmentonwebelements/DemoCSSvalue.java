@@ -1,10 +1,9 @@
 package assignmentonwebelements;
 
+import browser_setups.BrowserMulti;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import browser_setups.BrowserMulti;
 
 public class DemoCSSvalue extends BrowserMulti {
 	
