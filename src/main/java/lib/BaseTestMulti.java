@@ -92,7 +92,8 @@ public abstract class BaseTestMulti implements IAutoConstant {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
-            options.addArguments("incognito");
+            //options.addArguments("incognito");
+            options.addArguments("user-data-dir=/Users/manukakk/Library/Application Support/Google/Chrome/Default");
             options.addArguments("start-maximized");
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
