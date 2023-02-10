@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -319,6 +320,22 @@ public class GenericLib {
 		Thread.sleep(5000);
 		BaseTest.driver.close();
 
+	}
+
+	/**
+	 * Author: Manu Kakkar
+	 * Description: Method return X and Y coordinates of element in form of array
+	 * @param value
+	 * @return
+	 */
+	public double[] getCoordinates(WebElement value){
+		double[] coordinates = new double[2];
+
+		WebElement element=BaseTest.driver.findElement(By.xpath(String.valueOf(value)));
+		Dimension dim=element.getSize();
+		coordinates[0] = dim.width;
+		coordinates[1] = dim.height;
+		return coordinates;
 	}
 
 }
