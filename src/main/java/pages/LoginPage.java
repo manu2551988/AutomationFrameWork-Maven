@@ -3,76 +3,69 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-public class LoginPage {
+/**
+ * Page Object for Login Page.
+ * Demonstrates the Page Object Model pattern with BasePage.
+ */
+public class LoginPage extends BasePage {
 
-	private WebDriver driver;
+    @FindBy(id = "username")
+    private WebElement usernameTB;
 
-	//declaration of variable
-	@FindBy(id = "username")
-	private WebElement unTB;
+    @FindBy(name = "pwd")
+    private WebElement passwordTB;
 
-	@FindBy(name = "pwd")
-	private WebElement pwTB;
+    @FindBy(id = "keepLoggedInCheckBox")
+    private WebElement keepLoggedInCB;
 
-	@FindBy(id = "keepLoggedInCheckBox")
-	private WebElement chkBOX;
-	
-	@FindBy(xpath="//div[text()='Login ']")
-    private WebElement lognBTN;
-	
-	@FindBy(xpath="//span[contains(text(),'invalid.')]")
-	private WebElement errMSG;
-	
-	//initialize the Elements
-	public LoginPage(WebDriver driver)
-	{
-		PageFactory.initElements(driver, this);
-		this.driver = driver;
-	}
-	//utilization of WebElements
-	
-	public void clickOnKeepMeLoggedInCheckBox()
-	{
-		chkBOX.click();
-	}
-	public void clickOnLoginBTN()
-	{
-		lognBTN.click();
-	}
-	public void login()
-	{
-		unTB.sendKeys("admin");
-		pwTB.sendKeys("manager");
-		chkBOX.click();
-		lognBTN.click();
-	}
-	public void login(String un,String pw)
-	{
-		unTB.sendKeys(un);
-		pwTB.sendKeys(pw);
-		chkBOX.click();
-		lognBTN.click();
-	}
-	
-	public void setPassword(String pw)
-	{
-		pwTB.sendKeys(pw);
-	}
-	
-	public void setUsername(String un)
-	{
-		unTB.sendKeys(un);
-	}
-	
-	public void verifyErrMSg(WebDriver driver)
-	{
-	   Assert.assertTrue(errMSG.isDisplayed());
-	   Reporter.log("Error Msg Is Displayed"+errMSG.getText(),true);
-	}
-	
+    @FindBy(xpath = "//div[text()='Login ']")
+    private WebElement loginBtn;
 
+    @FindBy(xpath = "//span[contains(text(),'invalid.')]")
+    private WebElement errorMsg;
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public LoginPage enterUsername(String username) {
+        type(usernameTB, username);
+        return this;
+    }
+
+    public LoginPage enterPassword(String password) {
+        type(passwordTB, password);
+        return this;
+    }
+
+    public LoginPage checkKeepLoggedIn() {
+        click(keepLoggedInCB);
+        return this;
+    }
+
+    public void clickLogin() {
+        click(loginBtn);
+    }
+
+    /**
+     * Fluent login: chain username, password, checkbox, and submit.
+     */
+    public void login(String username, String password) {
+        enterUsername(username)
+                .enterPassword(password)
+                .checkKeepLoggedIn();
+        clickLogin();
+    }
+
+    public void verifyErrorMessage() {
+        Assert.assertTrue(isDisplayed(errorMsg), "Error message should be displayed");
+        Reporter.log("Error Msg Displayed: " + getText(errorMsg), true);
+    }
+
+    public String getErrorMessageText() {
+        return getText(errorMsg);
+    }
 }

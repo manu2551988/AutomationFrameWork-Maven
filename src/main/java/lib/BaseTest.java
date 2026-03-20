@@ -1,9 +1,9 @@
 package lib;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import init.IAutoConstant;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,217 +13,111 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
-import java.text.DateFormat;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
+/**
+ * Base test class providing browser setup/teardown, thread-safe WebDriver,
+ * and Extent Reports integration.
+ *
+ * Usage: Extend this class in your test classes.
+ * Browser can be set via testng.xml parameter or defaults to "chrome".
+ */
 public abstract class BaseTest implements IAutoConstant {
 
-    public static int passCount = 0, failCount = 0;
+    // Thread-safe WebDriver for parallel execution
+    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
+
+    // Keep static reference for backward compatibility with existing tests
     public static WebDriver driver;
 
-//    static {
-//        System.setProperty(CHROME_KEY, CHROME_VALUE);
-//        System.setProperty(GECKO_KEY, GECKO_VALUE);
-//        System.setProperty(EDGE_KEY, EDGE_VALUE);
-//    }
-
+    public static int passCount = 0, failCount = 0;
     public ExtentReports extent;
+    protected ExtentTest extentTest;
+
+    public static WebDriver getDriver() {
+        return driverThreadLocal.get();
+    }
 
     @BeforeSuite
     public void extentReportStart() {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd-M-yy hh-mm-ss aa");
-        Date date = new Date();
-
-//        String className = this.getClass().getSuperclass().getName();
-//        String className = this.getClass().getCanonicalName();
+        String timestamp = new SimpleDateFormat("dd-M-yy_hh-mm-ss_aa").format(new Date());
         String className = this.getClass().getSimpleName();
 
-        // start reporters
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("./Test-Ext-Report/" + className + "-" +
-                dateFormat.format(date) + ".html");
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(
+                "./Test-Ext-Report/" + className + "-" + timestamp + ".html");
+        htmlReporter.config().setDocumentTitle("Automation Report");
+        htmlReporter.config().setReportName(className);
 
-        // create ExtentReports and attach reporter(s)
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-
     }
 
-    /*@BeforeClass
-    //@Parameters("browser")
-    public void setUpBrowser() {
-        String browser = "chrome";
-
-        if (browser.equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--disable-notifications");
-            options.addArguments("incognito");
-            options.addArguments("start-maximized");
-            driver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            FirefoxOptions options = new FirefoxOptions();
-            options.addPreference("dom.webnotifications.enabled", false);
-            options.addPreference("browser.privatebrowsing.autostart", true);
-            driver = new FirefoxDriver(options);
-        } else if (browser.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
-            driver = new EdgeDriver(options);
-        } else {
-            Reporter.log("No Browser Configuration Found", true);
-        }
-
-        driver.manage().timeouts().implicitlyWait(ITO, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(PTO, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-
-    }*/
-
     @BeforeMethod
-    public void openApp() {
+    @Parameters({"browser"})
+    public void openApp(@Optional("chrome") String browser, Method method) {
+        WebDriver wd = createDriver(browser);
+        driverThreadLocal.set(wd);
+        driver = wd; // backward compat
 
-        String browser = "chrome";
+        wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
+        wd.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(PAGE_LOAD_TIMEOUT));
+        wd.manage().window().maximize();
 
-        if (browser.equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--disable-notifications");
-            options.addArguments("incognito");
-            options.addArguments("start-maximized");
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            FirefoxOptions options = new FirefoxOptions();
-            options.addPreference("dom.webnotifications.enabled", false);
-            options.addPreference("browser.privatebrowsing.autostart", true);
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver(options);
-        } else if (browser.equalsIgnoreCase("edge")) {
-            EdgeOptions options = new EdgeOptions();
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver(options);
-        } else {
-            Reporter.log("No Browser Configuration Found", true);
-        }
-
-        driver.manage().timeouts().implicitlyWait(ITO, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(PTO, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        extentTest = extent.createTest(method.getName());
+        Reporter.log("Browser launched: " + browser, true);
     }
 
     @AfterMethod
-    public void getStatus(ITestResult res) {
+    public void tearDown(ITestResult result) {
+        WebDriver wd = getDriver();
+        if (wd == null) return;
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        String methodName = result.getName();
+        String timestamp = new SimpleDateFormat("dd-MM-yy_hh-mm-ss_aa").format(new Date());
 
-        int status = res.getStatus();
-        String methodName = res.getName();
-        if (status == 1) {
+        if (result.getStatus() == ITestResult.SUCCESS) {
             passCount++;
-            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-            Date date = new Date();
-            String Photo_Path = passScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
-            ElementUtils.takeScreenShotResult(driver, Photo_Path);
-        } else {
+            ElementUtils.takeScreenShotResult(wd, PASS_SCREENSHOT_PATH + methodName + "-" + timestamp + ".png");
+            if (extentTest != null) extentTest.pass("Test passed");
+        } else if (result.getStatus() == ITestResult.FAILURE) {
             failCount++;
-            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-            Date date = new Date();
-            String Photo_Path = failScreenShotPath + methodName + "-" + dateFormat.format(date) + ".png";
-            ElementUtils.takeScreenShotResult(driver, Photo_Path);
-        }
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            ElementUtils.takeScreenShotResult(wd, FAIL_SCREENSHOT_PATH + methodName + "-" + timestamp + ".png");
+            if (extentTest != null) extentTest.fail(result.getThrowable());
+        } else {
+            if (extentTest != null) extentTest.skip("Test skipped");
         }
 
-        String parentwh = driver.getWindowHandle();
-        String parentTitle = driver.getTitle();
-
-        Set<String> whs = driver.getWindowHandles();
-        int count = whs.size();
-        System.out.println("Tab opened Count:" + count);
-
-        for (String w : whs) {
-            driver.switchTo().window(w);
-            String s = driver.getTitle();
-            if (s.equals(parentTitle)) {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                driver.close();
-            } else {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                driver.quit();
-            }
-        }
-
-
+        wd.quit();
+        driverThreadLocal.remove();
     }
-
-    /*@AfterClass
-    public void tearDown() {
-
-        String parentwh = driver.getWindowHandle();
-        String parentTitle = driver.getTitle();
-
-        Set<String> whs = driver.getWindowHandles();
-        int count = whs.size();
-        System.out.println("Tab opened Count:" + count);
-
-        for (String w : whs) {
-            driver.switchTo().window(w);
-            String s = driver.getTitle();
-            if (s.equals(parentTitle)) {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                driver.close();
-            } else {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                driver.quit();
-            }
-        }
-    }*/
 
     @AfterSuite
     public void printReport() {
-
         Reporter.log("PassCount:" + passCount, true);
         Reporter.log("FailCount:" + failCount, true);
-        GenericLib.createCell(RfilePath, "Sheet1", 1, 0, passCount);
-        GenericLib.createCell(RfilePath, "Sheet1", 1, 1, failCount);
+        GenericLib.createCell(RESULT_FILE_PATH, "Sheet1", 1, 0, passCount);
+        GenericLib.createCell(RESULT_FILE_PATH, "Sheet1", 1, 1, failCount);
         extent.flush();
     }
 
-
+    private WebDriver createDriver(String browser) {
+        switch (browser.toLowerCase()) {
+            case "firefox":
+                FirefoxOptions ffOptions = new FirefoxOptions();
+                ffOptions.addPreference("dom.webnotifications.enabled", false);
+                return new FirefoxDriver(ffOptions);
+            case "edge":
+                return new EdgeDriver(new EdgeOptions());
+            case "chrome":
+            default:
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--disable-notifications", "--start-maximized");
+                return new ChromeDriver(chromeOptions);
+        }
+    }
 }

@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Suite">
-  <test thread-count="5" parallel="tests" name="Test">
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="AutomationSuite" parallel="tests" thread-count="3">
+
+    <!-- UI Tests -->
+    <test name="UI-GoogleSearch">
+        <classes>
+            <class name="samples.GoogleSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="UI-FormInteractions">
+        <classes>
+            <class name="samples.FormInteractionTest"/>
+        </classes>
+    </test>
+
+    <test name="UI-FrameAndWindow">
+        <classes>
+            <class name="samples.FrameAndWindowTest"/>
+        </classes>
+    </test>
+
+    <test name="UI-TableAndActions">
+        <classes>
+            <class name="samples.TableAndActionsTest"/>
+        </classes>
+    </test>
+
+    <test name="UI-DataDriven">
+        <classes>
+            <class name="samples.DataDrivenTest"/>
+        </classes>
+    </test>
+
+    <!-- API Tests (no browser needed) -->
+    <test name="API-RestAssured">
+        <classes>
+            <class name="samples.RestApiTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -2,47 +2,37 @@ package init;
 
 public interface IAutoConstant {
 
-	String DirPath = System.getProperty("user.dir");
+    String DIR_PATH = System.getProperty("user.dir");
 
-	String CHROME_KEY = "webdriver.chrome.driver";
+    // Browser constants
+    String CHROME = "chrome";
+    String FIREFOX = "firefox";
+    String EDGE = "edge";
 
-	String CHROME_VALUE = "./src/test/resources/driver/chromedriver.exe";
+    // File paths
+    String PROP_FILE_PATH = DIR_PATH + "/src/main/resources/propertfiles/data.properties";
+    String EXCEL_FILE_PATH = DIR_PATH + "/src/test/resources/TestCases_Actitime.xlsx";
+    String RESULT_FILE_PATH = DIR_PATH + "/src/test/resources/Result_Report.xlsx";
+    String SCREENSHOT_PATH = DIR_PATH + "/src/test/resources/ScreenShots/";
+    String WEB_ELEM_SCREENSHOT_PATH = DIR_PATH + "/src/test/resources/WebElemScreeShot/";
+    String PASS_SCREENSHOT_PATH = DIR_PATH + "/src/test/resources/Pass-Results/";
+    String FAIL_SCREENSHOT_PATH = DIR_PATH + "/src/test/resources/Fail-Results/";
 
-	String GECKO_KEY = "webdriver.gecko.driver";
+    // Timeouts (seconds)
+    long IMPLICIT_WAIT = 20;
+    long EXPLICIT_WAIT = 10;
+    long PAGE_LOAD_TIMEOUT = 30;
 
-	String GECKO_VALUE = "./src/test/resources/driver/geckodriver.exe";
-
-	String EDGE_KEY = "webdriver.edge.driver";
-
-	String EDGE_VALUE = "./src/test/resources/driver/msedgedriver.exe";
-
-	String CHROME = "chrome";
-
-	String FIREFOX = "firefox";
-
-	String EDGE = "edge";
-
-	String PfilePath = DirPath + "/src/main/resources/propertfiles/data.properties";
-
-	String EfilePath = DirPath + "/src/test/resources/TestCases_Actitime.xlsx";
-	
-	String RfilePath = DirPath + "/src/test/resources/Result_Report.xlsx";
-
-	String screenShotPath = DirPath + "/src/test/resources/ScreenShots/";
-
-	String screenShotPathWebElement = DirPath + "/src/test/resources/WebElemScreeShot/";
-	
-	String passScreenShotPath = DirPath + "/src/test/resources/Pass-Results/";
-	
-	String failScreenShotPath = DirPath + "/src/test/resources/Fail-Results/";
-
-	String URL = "http://localhost/login.do";
-
-	long ITO = 20;
-
-	long ETO = 10;
-
-    long PTO = 30;
-	
-	long TS=4000;
+    // Backward compatibility aliases
+    String DirPath = DIR_PATH;
+    String PfilePath = PROP_FILE_PATH;
+    String EfilePath = EXCEL_FILE_PATH;
+    String RfilePath = RESULT_FILE_PATH;
+    String screenShotPath = SCREENSHOT_PATH;
+    String screenShotPathWebElement = WEB_ELEM_SCREENSHOT_PATH;
+    String passScreenShotPath = PASS_SCREENSHOT_PATH;
+    String failScreenShotPath = FAIL_SCREENSHOT_PATH;
+    long ITO = IMPLICIT_WAIT;
+    long ETO = EXPLICIT_WAIT;
+    long PTO = PAGE_LOAD_TIMEOUT;
 }

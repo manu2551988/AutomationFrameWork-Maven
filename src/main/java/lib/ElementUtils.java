@@ -2,148 +2,93 @@ package lib;
 
 import init.IAutoConstant;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
-public class ElementUtils extends BaseTest {
+/**
+ * Utility class for common WebDriver element operations:
+ * screenshots, waits, page title verification.
+ */
+public class ElementUtils implements IAutoConstant {
 
+    private static WebDriver driver() {
+        return BaseTest.getDriver() != null ? BaseTest.getDriver() : BaseTest.driver;
+    }
 
-    /**
-     * @param expectedPT
-     * @Author: Manu Kakkar Description: Method to verify the page titles
-     * Description: Method to validate the Page Title
-     */
+    // --- Explicit Wait Helpers ---
+
+    public static WebElement waitForClickable(WebElement element) {
+        return new WebDriverWait(driver(), Duration.ofSeconds(EXPLICIT_WAIT))
+                .until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static WebElement waitForVisible(WebElement element) {
+        return new WebDriverWait(driver(), Duration.ofSeconds(EXPLICIT_WAIT))
+                .until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static WebElement waitForPresence(By locator) {
+        return new WebDriverWait(driver(), Duration.ofSeconds(EXPLICIT_WAIT))
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public static boolean waitForTitle(String expectedTitle) {
+        return new WebDriverWait(driver(), Duration.ofSeconds(EXPLICIT_WAIT))
+                .until(ExpectedConditions.titleContains(expectedTitle));
+    }
+
+    // --- Page Title Verification ---
+
     public static void chkPageTitle(String expectedPT) {
-        WebDriverWait wait = new WebDriverWait(BaseTest.driver, 10);
-        wait.until(ExpectedConditions.titleContains(expectedPT));
-
-        String actualPT = BaseTest.driver.getTitle();
-        if (actualPT.equals(expectedPT)) {
-            System.out.println("Expected Page is Displayed-->" + actualPT);
+        waitForTitle(expectedPT);
+        String actualPT = driver().getTitle();
+        if (actualPT.contains(expectedPT)) {
+            Reporter.log("Expected Page is Displayed --> " + actualPT, true);
         } else {
-            System.out.println("Expected Page is NOT Displayed-->" + actualPT);
+            Reporter.log("Expected Page is NOT Displayed --> " + actualPT, true);
         }
     }
 
-    /**
-     * @param driver
-     * @param name
-     * @Author: Manu Kakkar
-     * Description: To take the ScreenShot of browser
-     */
+    // --- Screenshot Methods ---
 
     public static void takeScreenShot(WebDriver driver, String name) {
-
         try {
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File src = ts.getScreenshotAs(OutputType.FILE);
-            Reporter.log("Taking the Screenhot of" + name);
-            File desc = new File(IAutoConstant.screenShotPath + name + ".png");
-            FileUtils.copyFile(src, desc);
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(src, new File(SCREENSHOT_PATH + name + ".png"));
+            Reporter.log("Screenshot taken: " + name, true);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Screenshot not taken");
+            Reporter.log("Screenshot failed: " + e.getMessage(), true);
         }
     }
-
-    /**
-     * @param driver
-     * @param path
-     * @Author: Manu Kakkar
-     * Description:To take the ScreenShot of browser by failed test cases
-     */
 
     public static void takeScreenShotResult(WebDriver driver, String path) {
-
         try {
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File src = ts.getScreenshotAs(OutputType.FILE);
-            Reporter.log("Taking the ScreenShot");
-            File desc = new File(path);
-            FileUtils.copyFile(src, desc);
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(src, new File(path));
         } catch (Exception e) {
-            e.printStackTrace();
+            Reporter.log("Screenshot failed: " + e.getMessage(), true);
         }
     }
 
-    /**
-     * Author: Manu Kakkar
-     * Description : Method to TakeScreenShot using Dynamic name for Fail Test Script
-     *
-     * @param fileName
-     * @throws IOException
-     */
-
-    public static void getScreenShotFail(String fileName) throws IOException {
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-        Date date = new Date();
-        File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(IAutoConstant.failScreenShotPath + fileName +
-                "-" + dateFormat.format(date) + ".png"));
-    }
-
-    /**
-     * Author: Manu Kakkar
-     * Description: Method to TakeScreenShot using Dynamic name for Pass Test Script
-     *
-     * @param fileName
-     * @throws IOException
-     */
-    public static void getScreenShotPass(String fileName) throws IOException {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-        Date date = new Date();
-        File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(IAutoConstant.failScreenShotPath + fileName +
-                "-" + dateFormat.format(date) + ".png"));
-    }
-
-    /**
-     * Author: Manu Kakkar
-     * Description: Method to TakeScreenShot at Random Point
-     *
-     * @param filename
-     * @throws IOException
-     */
-    public static void getScreenShotRandom(String filename) throws IOException {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-        Date date = new Date();
-        File scrFile = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(IAutoConstant.screenShotPath + filename +
-                "-" + dateFormat.format(date) + ".png"));
-    }
-
-    /**
-     * Author: Manu Kakkar
-     * Description: Method to TakeScreenShot of an WebElement
-     *
-     * @param element
-     * @param fileName
-     */
     public static void takeWebElementScreenShot(WebElement element, String fileName) {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy hh-mm-ss aa");
-        Date date = new Date();
-
-        File srcFile = element.getScreenshotAs(OutputType.FILE);
-        File desFile = new File(IAutoConstant.screenShotPathWebElement + fileName +
-                "-" + dateFormat.format(date) + ".png");
+        String timestamp = new SimpleDateFormat("dd-MM-yy_hh-mm-ss_aa").format(new Date());
         try {
-            FileUtils.copyFile(srcFile, desFile);
+            File src = element.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(src, new File(WEB_ELEM_SCREENSHOT_PATH + fileName + "-" + timestamp + ".png"));
         } catch (IOException e) {
-            e.printStackTrace();
+            Reporter.log("Element screenshot failed: " + e.getMessage(), true);
         }
+    }
+
+    public static String takeScreenShotAsBase64(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
     }
 }
